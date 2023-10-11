@@ -1,1 +1,3 @@
-# MimicGen: A Data Generation System for Scalable Robot Learning using Human Demonstrations 
+# MimicGen Website
+
+Website for [MimicGen](https://mimicgen.github.io/).
