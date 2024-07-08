@@ -439,7 +439,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#install-documentation-dependencies">
-   Install documentation dependencies
+   Install Documentation Dependencies
   </a>
  </li>
 </ul>
@@ -512,7 +512,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#install-documentation-dependencies">
-   Install documentation dependencies
+   Install Documentation Dependencies
   </a>
  </li>
 </ul>
@@ -563,8 +563,8 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <p class="admonition-title">Note</p><p><a class="reference external" href="https://robosuite.ai/">robosuite</a> is an optional dependency that is only needed if running the examples provided with this repository. The MimicGen source code does not rely on robosuite and can be used with other simulation frameworks.</p>
 </div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;PATH_TO_YOUR_INSTALL_DIRECTORY&gt;
 $<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ARISE-Initiative/robosuite.git
-$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>b9d8d3de5e3dfd1724f4a0e6555246c460407daa
 $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>robosuite
+$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>b9d8d3de5e3dfd1724f4a0e6555246c460407daa
 $<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </pre></div>
 </div>
@@ -577,8 +577,8 @@ $<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </sp
 <p><a class="reference external" href="https://robomimic.github.io/">robomimic</a> is a required dependency that provides a standardized dataset format, wrappers around simulation environments, and policy learning utilities.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;PATH_TO_YOUR_INSTALL_DIRECTORY&gt;
 $<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ARISE-Initiative/robomimic.git
-$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>d0b37cf214bd24fb590d182edb6384333f67b661
 $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>robomimic
+$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>d0b37cf214bd24fb590d182edb6384333f67b661
 $<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </pre></div>
 </div>
@@ -590,10 +590,13 @@ $<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </sp
 <h4>robosuite_task_zoo<a class="headerlink" href="#robosuite-task-zoo" title="Permalink to this headline">#</a></h4>
 <div class="admonition note">
 <p class="admonition-title">Note</p><p><a class="reference external" href="https://github.com/ARISE-Initiative/robosuite-task-zoo">robosuite_task_zoo</a> is an optional dependency that is only needed if running the Kitchen and Hammer Cleanup environments and datasets provided with this repository.</p>
+</div><div class="admonition warning">
+<p class="admonition-title">Warning</p><p>We recommend removing the dependencies in the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file (the <code class="docutils literal notranslate"><span class="pre">install_requires</span></code> list) before installation, as it uses deprecated dependencies (such as mujoco-py).</p>
 </div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;PATH_TO_YOUR_INSTALL_DIRECTORY&gt;
 $<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ARISE-Initiative/robosuite-task-zoo
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>robosuite-task-zoo
 $<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>74eab7f88214c21ca1ae8617c2b2f8d19718a9ed
-$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>robosuite_task_zoo
+<span class="c1"># NOTE: should remove dependencies in setup.py in the &quot;install_requires&quot; before the last step</span>
 $<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </pre></div>
 </div>
@@ -624,7 +627,7 @@ $<span class="w"> </span>python<span class="w"> </span>demo_random_action.py
 <p class="admonition-title">Note</p><p>To test data generation please move on to the <a class="reference external" href="https://mimicgen.github.io/docs/tutorials/getting_started.html">Getting Started</a> tutorial.</p>
 </div></section>
 <section id="install-documentation-dependencies">
-<h2>Install documentation dependencies<a class="headerlink" href="#install-documentation-dependencies" title="Permalink to this headline">#</a></h2>
+<h2>Install Documentation Dependencies<a class="headerlink" href="#install-documentation-dependencies" title="Permalink to this headline">#</a></h2>
 <p>If you plan to contribute to the repository and add new features, you must install the additional requirements required to build the documentation locally:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements-docs.txt
 </pre></div>
