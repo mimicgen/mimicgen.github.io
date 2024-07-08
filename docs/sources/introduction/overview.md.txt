@@ -7,7 +7,9 @@
 This repository contains the official release of data generation code, simulation environments, and datasets for the [CoRL 2023](https://www.corl2023.org/) paper "MimicGen: A Data Generation System for Scalable Robot Learning using Human Demonstrations". 
 
 Website: [https://mimicgen.github.io](https://mimicgen.github.io)
+
 Paper: [https://arxiv.org/abs/2310.17596](https://arxiv.org/abs/2310.17596)
+
 Documentation: [https://mimicgen.github.io/docs/introduction/overview.html](https://mimicgen.github.io/docs/introduction/overview.html)
 
 <div class="admonition note">

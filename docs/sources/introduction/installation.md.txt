@@ -48,7 +48,7 @@ $ cd robosuite
 $ pip install -e .
 ```
 
-For more detailed instructions, see [here](https://robosuite.ai/docs/installation.html).
+For more detailed instructions, see the [robosuite installation page](https://robosuite.ai/docs/installation.html).
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -69,7 +69,7 @@ $ cd robomimic
 $ pip install -e .
 ```
 
-For more detailed instructions, see [here](https://robomimic.github.io/docs/introduction/installation.html)
+For more detailed instructions, see the [robomimic installation page](https://robomimic.github.io/docs/introduction/installation.html).
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
