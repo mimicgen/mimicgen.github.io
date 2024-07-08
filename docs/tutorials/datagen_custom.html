@@ -1,0 +1,942 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Data Generation for Custom Environments &#8212; mimicgen 1.0 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
+    <script src="../static/jquery.js"></script>
+    <script src="../static/underscore.js"></script>
+    <script src="../static/doctools.js"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Task Visualizations" href="task_visualizations.html" />
+    <link rel="prev" title="Launching Several Data Generation Runs" href="launching_several.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../static/mimicgen_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">mimicgen 1.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/installation.html">
+   Installation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Datasets
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/mimicgen_corl_2023.html">
+   MimicGen (CoRL 2023)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reproducing_experiments.html">
+   Reproducing Published Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="launching_several.html">
+   Launching Several Data Generation Runs
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Data Generation for Custom Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="task_visualizations.html">
+   Task Visualizations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="subtask_termination_signals.html">
+   Subtask Termination Signals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="debugging_datagen.html">
+   Debugging Data Generation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/overview.html">
+   Codebase Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/datagen.html">
+   Data Generation Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/task_spec.html">
+   Task Spec
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/env_interfaces.html">
+   Environment Interfaces
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/troubleshooting.html">
+   Troubleshooting and Known Issues
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Source API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api/mimicgen.html">
+   mimicgen package
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.configs.html">
+     mimicgen.configs package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.datagen.html">
+     mimicgen.datagen package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.env_interfaces.html">
+     mimicgen.env_interfaces package
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../api/mimicgen.envs.html">
+     mimicgen.envs package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/mimicgen.envs.robosuite.html">
+       mimicgen.envs.robosuite package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.scripts.html">
+     mimicgen.scripts package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.utils.html">
+     mimicgen.utils package
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../sources/tutorials/datagen_custom.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generating-data-for-new-tasks">
+   Generating Data for New Tasks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-implement-task-specific-environment-interface">
+     Step 1: Implement Task-Specific Environment Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-implement-task-specific-config">
+     Step 2: Implement Task-Specific Config
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-execute-data-generation-workflow">
+     Step 3: Execute Data Generation Workflow
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generating-data-for-new-simulation-frameworks">
+   Generating Data for New Simulation Frameworks
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Data Generation for Custom Environments</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generating-data-for-new-tasks">
+   Generating Data for New Tasks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-implement-task-specific-environment-interface">
+     Step 1: Implement Task-Specific Environment Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-implement-task-specific-config">
+     Step 2: Implement Task-Specific Config
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-execute-data-generation-workflow">
+     Step 3: Execute Data Generation Workflow
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generating-data-for-new-simulation-frameworks">
+   Generating Data for New Simulation Frameworks
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="data-generation-for-custom-environments">
+<h1>Data Generation for Custom Environments<a class="headerlink" href="#data-generation-for-custom-environments" title="Permalink to this headline">#</a></h1>
+<p>In this section, we provide guidance on using MimicGen to generate data for custom tasks and simulation frameworks.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p><p>We recommend going through the <a class="reference external" href="https://mimicgen.github.io/docs/tutorials/getting_started.html">Getting Started</a> tutorial first, so that you are familiar with the typical data generation workflow. We will refer back to the steps in the <a class="reference external" href="https://mimicgen.github.io/docs/tutorials/getting_started.html#overview-of-typical-data-generation-workflow">Data Generation Workflow Overview</a> in this section.</p>
+</div><section id="generating-data-for-new-tasks">
+<h2>Generating Data for New Tasks<a class="headerlink" href="#generating-data-for-new-tasks" title="Permalink to this headline">#</a></h2>
+<p>In this section, we will assume we are trying to generate data for a new task implemented in <a class="reference external" href="https://robosuite.ai/">robosuite</a>, and we will use the robosuite Stack Three task as a running example. The same instructions can be used for any task in any simulation framework, as long as an <a class="reference external" href="https://mimicgen.github.io/docs/modules/env_interfaces.html">Environment Interface</a> base class already exists for the simulation framework. See the <a class="reference external" href="https://mimicgen.github.io/docs/tutorials/datagen_custom.html#generating-data-for-new-simulation-frameworks">Generating Data for New Simulation Frameworks</a>) below for guidance on setting up a new simulation framework if this has not happened yet.</p>
+<section id="step-1-implement-task-specific-environment-interface">
+<h3>Step 1: Implement Task-Specific Environment Interface<a class="headerlink" href="#step-1-implement-task-specific-environment-interface" title="Permalink to this headline">#</a></h3>
+<p>The first step is to subclass the appropriate base Environment Interface class – for robosuite, this is the <code class="docutils literal notranslate"><span class="pre">RobosuiteInterface</span></code> class at the top of <code class="docutils literal notranslate"><span class="pre">env_interfaces/robosuite.py</span></code>. We create a new class as below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MG_StackThree</span><span class="p">(</span><span class="n">RobosuiteInterface</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Corresponds to robosuite StackThree task and variants.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">MG_EnvInterface</span></code> abstract base class in <code class="docutils literal notranslate"><span class="pre">env_interfaces/base.py</span></code> (which <code class="docutils literal notranslate"><span class="pre">RobosuiteInterface</span></code> inherits from) describes the methods that task-specific subclasses must implement. There are two important methods:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    These should be filled out by each simulation domain (e.g. nut assembly, coffee).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">def</span> <span class="nf">get_object_poses</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the pose of each object relevant to MimicGen data generation in the current scene.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            object_poses (dict): dictionary that maps object name (str) to object pose matrix (4x4 np.array)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">def</span> <span class="nf">get_subtask_term_signals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets a dictionary of binary flags for each subtask in a task. The flag is 1</span>
+<span class="sd">        when the subtask has been completed and 0 otherwise. MimicGen only uses this</span>
+<span class="sd">        when parsing source demonstrations at the start of data generation, and it only</span>
+<span class="sd">        uses the first 0 -&gt; 1 transition in this signal to detect the end of a subtask.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            subtask_term_signals (dict): dictionary that maps subtask name to termination flag (0 or 1)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+</pre></div>
+</div>
+<p>Recall that MimicGen generates data by composing object-centric subtask segments together (see the paper for more information). During data generation, MimicGen requires a way to observe the pose of the relevant object at the start of each subtask. The <code class="docutils literal notranslate"><span class="pre">get_object_poses</span></code> method will be used for this purpose - it should return a dictionary mapping object name to a pose matrix.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">RobosuiteInterface</span></code> base class offers a helper method <code class="docutils literal notranslate"><span class="pre">get_object_pose(self,</span> <span class="pre">obj_name,</span> <span class="pre">obj_type)</span></code> to make retrieving object poses from robosuite easily - we use it below to get the poses of each cube in the <code class="docutils literal notranslate"><span class="pre">StackThree</span></code> task.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">get_object_poses</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the pose of each object relevant to MimicGen data generation in the current scene.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            object_poses (dict): dictionary that maps object name (str) to object pose matrix (4x4 np.array)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># three relevant objects - three cubes</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">cubeA</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_object_pose</span><span class="p">(</span><span class="n">obj_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">cubeA</span><span class="o">.</span><span class="n">root_body</span><span class="p">,</span> <span class="n">obj_type</span><span class="o">=</span><span class="s2">&quot;body&quot;</span><span class="p">),</span>
+            <span class="n">cubeB</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_object_pose</span><span class="p">(</span><span class="n">obj_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">cubeB</span><span class="o">.</span><span class="n">root_body</span><span class="p">,</span> <span class="n">obj_type</span><span class="o">=</span><span class="s2">&quot;body&quot;</span><span class="p">),</span>
+            <span class="n">cubeC</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_object_pose</span><span class="p">(</span><span class="n">obj_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">cubeC</span><span class="o">.</span><span class="n">root_body</span><span class="p">,</span> <span class="n">obj_type</span><span class="o">=</span><span class="s2">&quot;body&quot;</span><span class="p">),</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+<p>Next we need to implement <code class="docutils literal notranslate"><span class="pre">get_subtask_term_signals</span></code>. This function has only one purpose - it is used to provide <a class="reference external" href="https://mimicgen.github.io/docs/tutorials/subtask_termination_signals.html">Subtask Termination Signals</a> for each timestep in the source demonstrations (this is part of what happens in <code class="docutils literal notranslate"><span class="pre">scripts/prepare_src_dataset.py</span></code>). These signals are used to determine where each subtask ends and the next one starts – the first 0 to 1 transition in this signal during a source demonstration determines the end of the subtask.</p>
+<p>The StackThree tasks consists of 4 object-centric subtasks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">grasping</span> <span class="n">cubeA</span> <span class="p">(</span><span class="n">motion</span> <span class="n">relative</span> <span class="n">to</span> <span class="n">cubeA</span><span class="p">)</span>
+<span class="mf">2.</span> <span class="n">placing</span> <span class="n">cubeA</span> <span class="n">on</span> <span class="n">cubeB</span> <span class="p">(</span><span class="n">motion</span> <span class="n">relative</span> <span class="n">to</span> <span class="n">cubeB</span><span class="p">)</span>
+<span class="mf">3.</span> <span class="n">grasping</span> <span class="n">cubeC</span> <span class="p">(</span><span class="n">motion</span> <span class="n">relative</span> <span class="n">to</span> <span class="n">cubeC</span><span class="p">)</span>
+<span class="mf">4.</span> <span class="n">placing</span> <span class="n">cubeC</span> <span class="n">on</span> <span class="n">cubeA</span> <span class="p">(</span><span class="n">motion</span> <span class="n">relative</span> <span class="n">to</span> <span class="n">cubeA</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To define the end of subtask 1 and 3, we can just check for a successful grasp, and for the end of subtask 2, we can check for a placement (re-using part of the success check for the robosuite StackThree task):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">get_subtask_term_signals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets a dictionary of binary flags for each subtask in a task. The flag is 1</span>
+<span class="sd">        when the subtask has been completed and 0 otherwise. MimicGen only uses this</span>
+<span class="sd">        when parsing source demonstrations at the start of data generation, and it only</span>
+<span class="sd">        uses the first 0 -&gt; 1 transition in this signal to detect the end of a subtask.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            subtask_term_signals (dict): dictionary that maps subtask name to termination flag (0 or 1)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">signals</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+        <span class="c1"># first subtask is grasping cubeA (motion relative to cubeA)</span>
+        <span class="n">signals</span><span class="p">[</span><span class="s2">&quot;grasp_1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">_check_grasp</span><span class="p">(</span><span class="n">gripper</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">robots</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">gripper</span><span class="p">,</span> <span class="n">object_geoms</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">cubeA</span><span class="p">))</span>
+
+        <span class="c1"># second subtask is placing cubeA on cubeB (motion relative to cubeB)</span>
+        <span class="n">signals</span><span class="p">[</span><span class="s2">&quot;stack_1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">_check_cubeA_stacked</span><span class="p">())</span>
+
+        <span class="c1"># third subtask is grasping cubeC (motion relative to cubeC)</span>
+        <span class="n">signals</span><span class="p">[</span><span class="s2">&quot;grasp_2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">_check_grasp</span><span class="p">(</span><span class="n">gripper</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">robots</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">gripper</span><span class="p">,</span> <span class="n">object_geoms</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">cubeC</span><span class="p">))</span>
+
+        <span class="c1"># final subtask is placing cubeC on cubeA (motion relative to cubeA) - but final subtask signal is not needed</span>
+        <span class="k">return</span> <span class="n">signals</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p><p>The final subtask in a task never requires a subtask termination signal, since its end is determined by the end of the source demonstration.</p>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p><p>Providing a proper implementation for the <code class="docutils literal notranslate"><span class="pre">get_subtask_term_signals</span></code> function is entirely optional. In most cases it is easy to specify heuristics to define these subtask boundaries as we did above, but sometimes you may want to just directly annotate the boundaries between subtasks. We provide an annotation script (<code class="docutils literal notranslate"><span class="pre">scripts/annotate_subtasks.py</span></code>) for this purpose. If you plan to do this, you can just return an empty dict for the <code class="docutils literal notranslate"><span class="pre">get_subtask_term_signals</span></code> function.</p>
+</div></section>
+<section id="step-2-implement-task-specific-config">
+<h3>Step 2: Implement Task-Specific Config<a class="headerlink" href="#step-2-implement-task-specific-config" title="Permalink to this headline">#</a></h3>
+<p>The next step is to implement a task-specific Config object that inherits from the <code class="docutils literal notranslate"><span class="pre">MG_Config</span></code> base class (<code class="docutils literal notranslate"><span class="pre">configs/config.py</span></code>). There are three things for the subclass to implement:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="nd">@property</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">NAME</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="c1"># must be specified by subclasses</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="nd">@property</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">TYPE</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="c1"># must be specified by subclasses</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="k">def</span> <span class="nf">task_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This function populates the `config.task` attribute of the config, </span>
+<span class="sd">        which has settings for each object-centric subtask in a task.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">NAME</span></code> and <code class="docutils literal notranslate"><span class="pre">TYPE</span></code> are used to store the new subclass into the config registry, and chiefly determine where the auto-generated config template is stored in the repository (e.g. <code class="docutils literal notranslate"><span class="pre">mimicgen/exps/templates/&lt;TYPE&gt;/&lt;NAME&gt;.json</span></code>).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">task_config</span></code> is consistent with <a class="reference external" href="https://mimicgen.github.io/docs/modules/task_spec.html">TaskSpec objects</a> – there is an entry for each subtask which consists of the arguments to the <code class="docutils literal notranslate"><span class="pre">add_subtask</span></code> function in the TaskSpec object (<code class="docutils literal notranslate"><span class="pre">configs/task_spec.py</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">add_subtask</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> 
+        <span class="n">object_ref</span><span class="p">,</span>
+        <span class="n">subtask_term_signal</span><span class="p">,</span>
+        <span class="n">subtask_term_offset_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">selection_strategy</span><span class="o">=</span><span class="s2">&quot;random&quot;</span><span class="p">,</span>
+        <span class="n">selection_strategy_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">action_noise</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span>
+        <span class="n">num_interpolation_steps</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+        <span class="n">num_fixed_steps</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">apply_noise_during_interpolation</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+</pre></div>
+</div>
+<p>We show the implementation for the StackThree config below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">StackThree_Config</span><span class="p">(</span><span class="n">MG_Config</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Corresponds to robosuite StackThree task and variants.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">NAME</span> <span class="o">=</span> <span class="s2">&quot;stack_three&quot;</span>
+    <span class="n">TYPE</span> <span class="o">=</span> <span class="s2">&quot;robosuite&quot;</span>
+
+    <span class="k">def</span> <span class="nf">task_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This function populates the `config.task` attribute of the config, </span>
+<span class="sd">        which has settings for each object-centric subtask in a task. Each </span>
+<span class="sd">        dictionary should have kwargs for the @add_subtask method in the </span>
+<span class="sd">        @MG_TaskSpec object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">task_spec</span><span class="o">.</span><span class="n">subtask_1</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">object_ref</span><span class="o">=</span><span class="s2">&quot;cubeA&quot;</span><span class="p">,</span> 
+            <span class="n">subtask_term_signal</span><span class="o">=</span><span class="s2">&quot;grasp_1&quot;</span><span class="p">,</span>
+            <span class="n">subtask_term_offset_range</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+            <span class="n">selection_strategy</span><span class="o">=</span><span class="s2">&quot;nearest_neighbor_object&quot;</span><span class="p">,</span>
+            <span class="n">selection_strategy_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">nn_k</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
+            <span class="n">action_noise</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+            <span class="n">num_interpolation_steps</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+            <span class="n">num_fixed_steps</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">apply_noise_during_interpolation</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">task_spec</span><span class="o">.</span><span class="n">subtask_2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">object_ref</span><span class="o">=</span><span class="s2">&quot;cubeB&quot;</span><span class="p">,</span> 
+            <span class="n">subtask_term_signal</span><span class="o">=</span><span class="s2">&quot;stack_1&quot;</span><span class="p">,</span>
+            <span class="n">subtask_term_offset_range</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+            <span class="n">selection_strategy</span><span class="o">=</span><span class="s2">&quot;nearest_neighbor_object&quot;</span><span class="p">,</span>
+            <span class="n">selection_strategy_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">nn_k</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
+            <span class="n">action_noise</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+            <span class="n">num_interpolation_steps</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+            <span class="n">num_fixed_steps</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">apply_noise_during_interpolation</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">task_spec</span><span class="o">.</span><span class="n">subtask_3</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">object_ref</span><span class="o">=</span><span class="s2">&quot;cubeC&quot;</span><span class="p">,</span> 
+            <span class="n">subtask_term_signal</span><span class="o">=</span><span class="s2">&quot;grasp_2&quot;</span><span class="p">,</span>
+            <span class="n">subtask_term_offset_range</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+            <span class="n">selection_strategy</span><span class="o">=</span><span class="s2">&quot;nearest_neighbor_object&quot;</span><span class="p">,</span>
+            <span class="n">selection_strategy_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">nn_k</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
+            <span class="n">action_noise</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+            <span class="n">num_interpolation_steps</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+            <span class="n">num_fixed_steps</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">apply_noise_during_interpolation</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">task_spec</span><span class="o">.</span><span class="n">subtask_4</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">object_ref</span><span class="o">=</span><span class="s2">&quot;cubeA&quot;</span><span class="p">,</span> 
+            <span class="n">subtask_term_signal</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">subtask_term_offset_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">selection_strategy</span><span class="o">=</span><span class="s2">&quot;nearest_neighbor_object&quot;</span><span class="p">,</span>
+            <span class="n">selection_strategy_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">nn_k</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
+            <span class="n">action_noise</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+            <span class="n">num_interpolation_steps</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+            <span class="n">num_fixed_steps</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">apply_noise_during_interpolation</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">task_spec</span><span class="o">.</span><span class="n">do_not_lock_keys</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Notice that we set the <code class="docutils literal notranslate"><span class="pre">object_ref</span></code> for each subtask to be consistent with the object names in the <code class="docutils literal notranslate"><span class="pre">get_object_poses</span></code> method in the <code class="docutils literal notranslate"><span class="pre">MG_StackThree</span></code> environment interface we implemented. We also set the <code class="docutils literal notranslate"><span class="pre">subtask_term_signal</span></code> for each subtask to be consistent with the subtask signals in the <code class="docutils literal notranslate"><span class="pre">get_subtask_term_signals</span></code> method in the <code class="docutils literal notranslate"><span class="pre">MG_StackThree</span></code> class as well. Please see the <a class="reference external" href="https://mimicgen.github.io/docs/modules/task_spec.html">TaskSpec page</a> for more information on the other settings.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p><p>If you used or plan to use <code class="docutils literal notranslate"><span class="pre">scripts/annotate_subtasks.py</span></code> to manually annotate the end of each subtask in the source demos, you should use signal names that are consistent with the <code class="docutils literal notranslate"><span class="pre">--signals</span></code> argument that you will pass to that script that give a name to each subtask. Internally, the annotations are stored as subtask termination signals with those names.</p>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p><p>You should make sure that the config class you implemented is being imported somewhere in your codebase to make sure it gets registered in the config registry. In the MimicGen codebase, we do this in <code class="docutils literal notranslate"><span class="pre">mimicgen/configs/__init__.py</span></code>.</p>
+</div><p>Finally, run <code class="docutils literal notranslate"><span class="pre">scripts/generate_config_templates.py</span></code> to generate a config template for this new task. It should appear under <code class="docutils literal notranslate"><span class="pre">mimicgen/exps/templates/&lt;TYPE&gt;/&lt;NAME&gt;.json</span></code>. Ensure that the default settings look correct. These settings can be overridden using config generators (<a class="reference external" href="https://mimicgen.github.io/docs/tutorials/launching_several.html">see this tutorial</a>).</p>
+</section>
+<section id="step-3-execute-data-generation-workflow">
+<h3>Step 3: Execute Data Generation Workflow<a class="headerlink" href="#step-3-execute-data-generation-workflow" title="Permalink to this headline">#</a></h3>
+<p>You are now all set to try data generation. You should be able to follow the steps documented in the <a class="reference external" href="https://mimicgen.github.io/docs/tutorials/getting_started.html#overview-of-typical-data-generation-workflow">Data Generation Workflow Overview</a> with some minor changes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p><p>Now that you have followed these steps, you can generate datasets for any other variants of this task, as long as the TaskSpec does not change – e.g. different object placements, different robot arms, and different object instances. The <a class="reference external" href="https://mimicgen.github.io/docs/tutorials/reproducing_experiments.html">Reproducing Experiments</a> tutorial provides examples of all three variations.</p>
+</div></section>
+</section>
+<section id="generating-data-for-new-simulation-frameworks">
+<h2>Generating Data for New Simulation Frameworks<a class="headerlink" href="#generating-data-for-new-simulation-frameworks" title="Permalink to this headline">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p><p>Before starting, you should ensure that a <a class="reference external" href="https://robomimic.github.io/docs/modules/environments.html">robomimic environment wrapper</a> exists for the simulation framework you are using. See <a class="reference external" href="https://robomimic.github.io/docs/modules/environments.html#implement-an-environment-wrapper">this link</a> for guidance on how to create one. The environment metadata in the source hdf5 should point to this environment wrapper.</p>
+</div><p>In this section, we will show how to apply MimicGen to new simulation frameworks. The key step is to implement an <a class="reference external" href="https://mimicgen.github.io/docs/modules/env_interfaces.html">Environment Interface</a> base class for the simulation framework. We will use robosuite as a running example in this section.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">MG_EnvInterface</span></code> abstract base class in <code class="docutils literal notranslate"><span class="pre">env_interfaces/base.py</span></code> describes the methods that base subclasses for new simulators must implement. There are five important methods:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    These should be filled out by simulator subclasses (e.g. robosuite).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nd">@property</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">INTERFACE_TYPE</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns string corresponding to interface type. This is used to group</span>
+<span class="sd">        all subclasses together in the interface registry (for example, all robosuite</span>
+<span class="sd">        interfaces) and helps avoid name conflicts.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">def</span> <span class="nf">get_robot_eef_pose</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get current robot end effector pose. Should be the same frame as used by the robot end-effector controller.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            pose (np.array): 4x4 eef pose matrix</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">def</span> <span class="nf">target_pose_to_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_pose</span><span class="p">,</span> <span class="n">relative</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Takes a target pose for the end effector controller and returns an action </span>
+<span class="sd">        (usually a normalized delta pose action) to try and achieve that target pose. </span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            target_pose (np.array): 4x4 target eef pose</span>
+<span class="sd">            relative (bool): if True, use relative pose actions, else absolute pose actions</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            action (np.array): action compatible with env.step (minus gripper actuation)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">def</span> <span class="nf">action_to_target_pose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">relative</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Converts action (compatible with env.step) to a target pose for the end effector controller.</span>
+<span class="sd">        Inverse of @target_pose_to_action. Usually used to infer a sequence of target controller poses</span>
+<span class="sd">        from a demonstration trajectory using the recorded actions.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            action (np.array): environment action</span>
+<span class="sd">            relative (bool): if True, use relative pose actions, else absolute pose actions</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            target_pose (np.array): 4x4 target eef pose that @action corresponds to</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">def</span> <span class="nf">action_to_gripper_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Extracts the gripper actuation part of an action (compatible with env.step).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            action (np.array): environment action</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            gripper_action (np.array): subset of environment action for gripper actuation</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">INTERFACE_TYPE</span></code> method is just used to make sure there are no class name conflicts in the environment interface registry. You should just make sure to choose a name unique to your simulation framework. For robosuite, we simply used <code class="docutils literal notranslate"><span class="pre">&quot;robosuite&quot;</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">get_robot_eef_pose</span></code> method returns the current pose of the robot end effector and corresponds to the same frame used by the end effector controller in the simulation environment. In robosuite, the Operational Space Controller uses a specific MuJoCo site, so we return its pose:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">get_robot_eef_pose</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get current robot end effector pose. Should be the same frame as used by the robot end-effector controller.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            pose (np.array): 4x4 eef pose matrix</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># OSC control frame is a MuJoCo site - just retrieve its current pose</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_object_pose</span><span class="p">(</span>
+            <span class="n">obj_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">robots</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">eef_name</span><span class="p">,</span> 
+            <span class="n">obj_type</span><span class="o">=</span><span class="s2">&quot;site&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+<p>The next two methods (<code class="docutils literal notranslate"><span class="pre">target_pose_to_action</span></code>, <code class="docutils literal notranslate"><span class="pre">action_to_target_pose</span></code>) are used to translate between simulator actions (e.g. those given to <code class="docutils literal notranslate"><span class="pre">env.step</span></code>) and absolute target poses for the end effector controller. This typically consists of simple scaling factors and transformations between different rotation conventions (as described in Appendix N.1 of the MimicGen paper):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">target_pose_to_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_pose</span><span class="p">,</span> <span class="n">relative</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Takes a target pose for the end effector controller and returns an action </span>
+<span class="sd">        (usually a normalized delta pose action) to try and achieve that target pose. </span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            target_pose (np.array): 4x4 target eef pose</span>
+<span class="sd">            relative (bool): if True, use relative pose actions, else absolute pose actions</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            action (np.array): action compatible with env.step (minus gripper actuation)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># version check for robosuite - must be v1.2+, so that we&#39;re using the correct controller convention</span>
+        <span class="k">assert</span> <span class="p">(</span><span class="n">robosuite</span><span class="o">.</span><span class="n">__version__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="p">(</span><span class="n">robosuite</span><span class="o">.</span><span class="n">__version__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s2">&quot;2&quot;</span><span class="p">)</span>
+
+        <span class="c1"># target position and rotation</span>
+        <span class="n">target_pos</span><span class="p">,</span> <span class="n">target_rot</span> <span class="o">=</span> <span class="n">PoseUtils</span><span class="o">.</span><span class="n">unmake_pose</span><span class="p">(</span><span class="n">target_pose</span><span class="p">)</span>
+
+        <span class="c1"># current position and rotation</span>
+        <span class="n">curr_pose</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_robot_eef_pose</span><span class="p">()</span>
+        <span class="n">curr_pos</span><span class="p">,</span> <span class="n">curr_rot</span> <span class="o">=</span> <span class="n">PoseUtils</span><span class="o">.</span><span class="n">unmake_pose</span><span class="p">(</span><span class="n">curr_pose</span><span class="p">)</span>
+
+        <span class="c1"># get maximum position and rotation action bounds</span>
+        <span class="n">max_dpos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">robots</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">output_max</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">max_drot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">robots</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">output_max</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">relative</span><span class="p">:</span>
+            <span class="c1"># normalized delta position action</span>
+            <span class="n">delta_position</span> <span class="o">=</span> <span class="n">target_pos</span> <span class="o">-</span> <span class="n">curr_pos</span>
+            <span class="n">delta_position</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">delta_position</span> <span class="o">/</span> <span class="n">max_dpos</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">)</span>
+
+            <span class="c1"># normalized delta rotation action</span>
+            <span class="n">delta_rot_mat</span> <span class="o">=</span> <span class="n">target_rot</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">curr_rot</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+            <span class="n">delta_quat</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">mat2quat</span><span class="p">(</span><span class="n">delta_rot_mat</span><span class="p">)</span>
+            <span class="n">delta_rotation</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">quat2axisangle</span><span class="p">(</span><span class="n">delta_quat</span><span class="p">)</span>
+            <span class="n">delta_rotation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">delta_rotation</span> <span class="o">/</span> <span class="n">max_drot</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">delta_position</span><span class="p">,</span> <span class="n">delta_rotation</span><span class="p">])</span>
+
+        <span class="c1"># absolute position and rotation action</span>
+        <span class="n">target_quat</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">mat2quat</span><span class="p">(</span><span class="n">target_rot</span><span class="p">)</span>
+        <span class="n">abs_rotation</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">quat2axisangle</span><span class="p">(</span><span class="n">target_quat</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">target_pos</span><span class="p">,</span> <span class="n">abs_rotation</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">action_to_target_pose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">relative</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Converts action (compatible with env.step) to a target pose for the end effector controller.</span>
+<span class="sd">        Inverse of @target_pose_to_action. Usually used to infer a sequence of target controller poses</span>
+<span class="sd">        from a demonstration trajectory using the recorded actions.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            action (np.array): environment action</span>
+<span class="sd">            relative (bool): if True, use relative pose actions, else absolute pose actions</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            target_pose (np.array): 4x4 target eef pose that @action corresponds to</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># version check for robosuite - must be v1.2+, so that we&#39;re using the correct controller convention</span>
+        <span class="k">assert</span> <span class="p">(</span><span class="n">robosuite</span><span class="o">.</span><span class="n">__version__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="p">(</span><span class="n">robosuite</span><span class="o">.</span><span class="n">__version__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s2">&quot;2&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">relative</span><span class="p">):</span>
+            <span class="c1"># convert absolute action to absolute pose</span>
+            <span class="n">target_pos</span> <span class="o">=</span> <span class="n">action</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+            <span class="n">target_quat</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">axisangle2quat</span><span class="p">(</span><span class="n">action</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span>
+            <span class="n">target_rot</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">quat2mat</span><span class="p">(</span><span class="n">target_quat</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># get maximum position and rotation action bounds</span>
+            <span class="n">max_dpos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">robots</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">output_max</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">max_drot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">robots</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">output_max</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+            <span class="c1"># unscale actions</span>
+            <span class="n">delta_position</span> <span class="o">=</span> <span class="n">action</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="n">max_dpos</span>
+            <span class="n">delta_rotation</span> <span class="o">=</span> <span class="n">action</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span> <span class="o">*</span> <span class="n">max_drot</span>
+
+            <span class="c1"># current position and rotation</span>
+            <span class="n">curr_pose</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_robot_eef_pose</span><span class="p">()</span>
+            <span class="n">curr_pos</span><span class="p">,</span> <span class="n">curr_rot</span> <span class="o">=</span> <span class="n">PoseUtils</span><span class="o">.</span><span class="n">unmake_pose</span><span class="p">(</span><span class="n">curr_pose</span><span class="p">)</span>
+
+            <span class="c1"># get pose target</span>
+            <span class="n">target_pos</span> <span class="o">=</span> <span class="n">curr_pos</span> <span class="o">+</span> <span class="n">delta_position</span>
+            <span class="n">delta_quat</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">axisangle2quat</span><span class="p">(</span><span class="n">delta_rotation</span><span class="p">)</span>
+            <span class="n">delta_rot_mat</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">quat2mat</span><span class="p">(</span><span class="n">delta_quat</span><span class="p">)</span>
+            <span class="n">target_rot</span> <span class="o">=</span> <span class="n">delta_rot_mat</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">curr_rot</span><span class="p">)</span>
+
+        <span class="n">target_pose</span> <span class="o">=</span> <span class="n">PoseUtils</span><span class="o">.</span><span class="n">make_pose</span><span class="p">(</span><span class="n">target_pos</span><span class="p">,</span> <span class="n">target_rot</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">target_pose</span>
+</pre></div>
+</div>
+<p>Finally, the <code class="docutils literal notranslate"><span class="pre">action_to_gripper_action</span></code> extracts the part of the simulator action that corresponds to gripper actuation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">action_to_gripper_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Extracts the gripper actuation part of an action (compatible with env.step).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            action (np.array): environment action</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            gripper_action (np.array): subset of environment action for gripper actuation</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># last dimension is gripper action</span>
+        <span class="k">return</span> <span class="n">action</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span>
+</pre></div>
+</div>
+<p>Finally, you can follow the instructions in the <a class="reference external" href="https://mimicgen.github.io/docs/tutorials/datagen_custom.html#generating-data-for-new-tasks">Generating Data for New Tasks</a> section to setup data generation for specific tasks in this simulation framework.</p>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="launching_several.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Launching Several Data Generation Runs</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="task_visualizations.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Task Visualizations</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ajay Mandlekar<br/>
+  
+      &copy; Copyright 2023-2024, NVIDIA.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,653 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>MimicGen (CoRL 2023) &#8212; mimicgen 1.0 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
+    <script src="../static/jquery.js"></script>
+    <script src="../static/underscore.js"></script>
+    <script src="../static/doctools.js"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting Started" href="../tutorials/getting_started.html" />
+    <link rel="prev" title="Installation" href="../introduction/installation.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../static/mimicgen_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">mimicgen 1.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/installation.html">
+   Installation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Datasets
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   MimicGen (CoRL 2023)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
+   Reproducing Published Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/launching_several.html">
+   Launching Several Data Generation Runs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/datagen_custom.html">
+   Data Generation for Custom Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/task_visualizations.html">
+   Task Visualizations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/subtask_termination_signals.html">
+   Subtask Termination Signals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/debugging_datagen.html">
+   Debugging Data Generation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/overview.html">
+   Codebase Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/datagen.html">
+   Data Generation Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/task_spec.html">
+   Task Spec
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/env_interfaces.html">
+   Environment Interfaces
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/troubleshooting.html">
+   Troubleshooting and Known Issues
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Source API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api/mimicgen.html">
+   mimicgen package
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.configs.html">
+     mimicgen.configs package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.datagen.html">
+     mimicgen.datagen package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.env_interfaces.html">
+     mimicgen.env_interfaces package
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../api/mimicgen.envs.html">
+     mimicgen.envs package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/mimicgen.envs.robosuite.html">
+       mimicgen.envs.robosuite package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.scripts.html">
+     mimicgen.scripts package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.utils.html">
+     mimicgen.utils package
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../sources/datasets/mimicgen_corl_2023.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#downloading-and-using-datasets">
+   Downloading and Using Datasets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataset-types">
+     Dataset Types
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataset-statistics">
+     Dataset Statistics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataset-download">
+     Dataset Download
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-1-using-download-datasets-py-recommended">
+       Method 1: Using
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         download_datasets.py
+        </span>
+       </code>
+       (Recommended)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-2-using-direct-download-links">
+       Method 2: Using Direct Download Links
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-3-using-hugging-face">
+       Method 3: Using Hugging Face
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reproducing-policy-learning-results">
+   Reproducing Policy Learning Results
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>MimicGen (CoRL 2023)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#downloading-and-using-datasets">
+   Downloading and Using Datasets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataset-types">
+     Dataset Types
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataset-statistics">
+     Dataset Statistics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataset-download">
+     Dataset Download
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-1-using-download-datasets-py-recommended">
+       Method 1: Using
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         download_datasets.py
+        </span>
+       </code>
+       (Recommended)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-2-using-direct-download-links">
+       Method 2: Using Direct Download Links
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#method-3-using-hugging-face">
+       Method 3: Using Hugging Face
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reproducing-policy-learning-results">
+   Reproducing Policy Learning Results
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="mimicgen-corl-2023">
+<h1>MimicGen (CoRL 2023)<a class="headerlink" href="#mimicgen-corl-2023" title="Permalink to this headline">#</a></h1>
+<p>In this section, we provide an overview of the datasets we released with the MimicGen paper. These are the same exact datasets used in our paper (but postprocessed to support a higher version of robosuite). We also show how to easily reproduce policy learning results on this data.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p><p>If you would like to reproduce our data generation results in addition to the policy learning results, please see the <a class="reference external" href="https://mimicgen.github.io/docs/tutorials/reproducing_experiments.html">Reproducing Experiments</a> tutorial for a comprehensive guide.</p>
+</div><section id="downloading-and-using-datasets">
+<h2>Downloading and Using Datasets<a class="headerlink" href="#downloading-and-using-datasets" title="Permalink to this headline">#</a></h2>
+<section id="dataset-types">
+<h3>Dataset Types<a class="headerlink" href="#dataset-types" title="Permalink to this headline">#</a></h3>
+<p>As described in the paper, each task has a default reset distribution (D_0). Source human demonstrations (usually 10 demos) were collected on this distribution and MimicGen was subsequently used to generate large datasets (usually 1000 demos) across different task reset distributions (e.g. D_0, D_1, D_2), objects, and robots.</p>
+<p>The datasets are split into different types:</p>
+<ul class="simple">
+<li><p><strong>source</strong>: source human datasets used to generate all data – this generally consists of 10 human demonstrations collected on the D_0 variant for each task.</p></li>
+<li><p><strong>core</strong>: datasets generated with MimicGen for different task reset distributions. These correspond to the core set of results in Figure 4 of the paper.</p></li>
+<li><p><strong>object</strong>: datasets generated with MimicGen for different objects. These correspond to the results in Appendix G of the paper.</p></li>
+<li><p><strong>robot</strong>: datasets generated with MimicGen for different robots. These correspond to the results in Appendix F of the paper.</p></li>
+<li><p><strong>large_interpolation</strong>: datasets generated with MimicGen using much larger interpolation segments. These correspond to the results in Appendix H in the paper.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p><p>We found that the large_interpolation datasets pose a significant challenge for imitation learning, and have substantial room for improvement.</p>
+</div></section>
+<section id="dataset-statistics">
+<h3>Dataset Statistics<a class="headerlink" href="#dataset-statistics" title="Permalink to this headline">#</a></h3>
+<p>The datasets contain over 48,000 task demonstrations across 12 tasks.</p>
+<p>We provide more information on the amount of demonstrations for each dataset type:</p>
+<ul class="simple">
+<li><p><strong>source</strong>: 120 human demonstrations across 12 tasks (10 per task) used to automatically generate the other datasets</p></li>
+<li><p><strong>core</strong>: 26,000 task demonstrations across 12 tasks (26 task variants)</p></li>
+<li><p><strong>object</strong>: 2000 task demonstrations on the Mug Cleanup task with different mugs</p></li>
+<li><p><strong>robot</strong>: 16,000 task demonstrations across 4 different robot arms on 2 tasks (4 task variants)</p></li>
+<li><p><strong>large_interpolation</strong>: 6000 task demonstrations across 6 tasks that pose significant challenges for modern imitation learning methods</p></li>
+</ul>
+</section>
+<section id="dataset-download">
+<h3>Dataset Download<a class="headerlink" href="#dataset-download" title="Permalink to this headline">#</a></h3>
+<section id="method-1-using-download-datasets-py-recommended">
+<h4>Method 1: Using <code class="docutils literal notranslate"><span class="pre">download_datasets.py</span></code> (Recommended)<a class="headerlink" href="#method-1-using-download-datasets-py-recommended" title="Permalink to this headline">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">download_datasets.py</span></code> (located at <code class="docutils literal notranslate"><span class="pre">mimicgen/scripts</span></code>) is a python script that provides a programmatic way of downloading the datasets. This is the preferred method, because this script also sets up a directory structure for the datasets that works out of the box with the code for reproducing policy learning results.</p>
+<p>A few examples of using this script are provided below:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># default behavior - just download core square_d0 dataset</span>
+python<span class="w"> </span>download_datasets.py
+
+<span class="c1"># download core datasets for square D0, D1, D2 and coffee D0, D1, D2</span>
+python<span class="w"> </span>download_datasets.py<span class="w"> </span>--dataset_type<span class="w"> </span>core<span class="w"> </span>--tasks<span class="w"> </span>square_d0<span class="w"> </span>square_d1<span class="w"> </span>square_d2<span class="w"> </span>coffee_d0<span class="w"> </span>coffee_d1<span class="w"> </span>coffee_d2
+
+<span class="c1"># download all core datasets, but do a dry run first to see what will be downloaded and where</span>
+python<span class="w"> </span>download_datasets.py<span class="w"> </span>--dataset_type<span class="w"> </span>core<span class="w"> </span>--tasks<span class="w"> </span>all<span class="w"> </span>--dry_run
+
+<span class="c1"># download all source human datasets</span>
+python<span class="w"> </span>download_datasets.py<span class="w"> </span>--dataset_type<span class="w"> </span><span class="nb">source</span><span class="w"> </span>--tasks<span class="w"> </span>all
+</pre></div>
+</div>
+</section>
+<section id="method-2-using-direct-download-links">
+<h4>Method 2: Using Direct Download Links<a class="headerlink" href="#method-2-using-direct-download-links" title="Permalink to this headline">#</a></h4>
+<p>You can download the datasets manually through Google Drive. The folders each correspond to the dataset types described in <a class="reference external" href="#dataset-types">Dataset Types</a>.</p>
+<p><strong>Google Drive folder with all datasets:</strong> <a class="reference external" href="https://drive.google.com/drive/folders/14e9kkHGfApuQ709LBEbXrXVI1Lp5Ax7p?usp=drive_link">link</a></p>
+</section>
+<section id="method-3-using-hugging-face">
+<h4>Method 3: Using Hugging Face<a class="headerlink" href="#method-3-using-hugging-face" title="Permalink to this headline">#</a></h4>
+<p>You can download the datasets through Hugging Face.</p>
+<p><strong>Hugging Face dataset repository:</strong> <a class="reference external" href="https://huggingface.co/datasets/amandlek/mimicgen_datasets">link</a></p>
+</section>
+</section>
+</section>
+<section id="reproducing-policy-learning-results">
+<h2>Reproducing Policy Learning Results<a class="headerlink" href="#reproducing-policy-learning-results" title="Permalink to this headline">#</a></h2>
+<p>After downloading the appropriate datasets you’re interested in using by running the <code class="docutils literal notranslate"><span class="pre">download_datasets.py</span></code> script, the <code class="docutils literal notranslate"><span class="pre">generate_training_configs_for_public_datasets.py</span></code> script (located at <code class="docutils literal notranslate"><span class="pre">mimicgen/scripts</span></code>) can be used to generate all training config json files necessary to reproduce the experiments in the paper. A few examples are below.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assume datasets already exist in mimicgen/../datasets folder. Configs will be generated under mimicgen/exps/paper, and training results will be at mimicgen/../training_results after launching training runs.</span>
+python<span class="w"> </span>generate_training_configs_for_public_datasets.py
+
+<span class="c1"># Alternatively, specify where datasets exist, and specify where configs should be generated.</span>
+python<span class="w"> </span>generate_training_configs_for_public_datasets.py<span class="w"> </span>--config_dir<span class="w"> </span>/tmp/configs<span class="w"> </span>--dataset_dir<span class="w"> </span>/tmp/datasets<span class="w"> </span>--output_dir<span class="w"> </span>/tmp/experiment_results
+</pre></div>
+</div>
+<p>Then, to reproduce a specific set of training runs for different experiment groups (see <a class="reference external" href="#dataset-types">Dataset Types</a>), we can simply navigate to the generated config directory, and copy training commands from the generated shell script there. As an example, we can reproduce the image training results on the Coffee D0 dataset, by looking for the correct set of commands in <code class="docutils literal notranslate"><span class="pre">mimicgen/exps/paper/core.sh</span></code> and running them. The relevant section of the shell script is reproduced below.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1">#  task: coffee_d0</span>
+<span class="c1">#    obs modality: image</span>
+python<span class="w"> </span>/path/to/robomimic/scripts/train.py<span class="w"> </span>--config<span class="w"> </span>/path/to/mimicgen/exps/paper/core/coffee_d0/image/bc_rnn.json
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p><p>In the MimicGen paper, we generated our datasets on versions of environments built on robosuite <code class="docutils literal notranslate"><span class="pre">v1.2</span></code>. Since then, we changed the environments and datasets (through postprocessing) to be based on robosuite <code class="docutils literal notranslate"><span class="pre">v1.4</span></code>. However, <code class="docutils literal notranslate"><span class="pre">v1.4</span></code> has some visual and dynamics differences from <code class="docutils literal notranslate"><span class="pre">v1.2</span></code>, so the learning results may not exactly match up with the ones we reported in the paper. In our testing on these released datasets, we were able to reproduce nearly all of our results, but within 10% of the performance reported in the paper.</p>
+</div></section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../introduction/installation.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Installation</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../tutorials/getting_started.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Getting Started</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ajay Mandlekar<br/>
+  
+      &copy; Copyright 2023-2024, NVIDIA.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,1215 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>mimicgen.scripts package &#8212; mimicgen 1.0 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
+    <script src="../static/jquery.js"></script>
+    <script src="../static/underscore.js"></script>
+    <script src="../static/doctools.js"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mimicgen.utils package" href="mimicgen.utils.html" />
+    <link rel="prev" title="mimicgen.envs.robosuite package" href="mimicgen.envs.robosuite.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../static/mimicgen_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">mimicgen 1.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/installation.html">
+   Installation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Datasets
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/mimicgen_corl_2023.html">
+   MimicGen (CoRL 2023)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
+   Reproducing Published Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/launching_several.html">
+   Launching Several Data Generation Runs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/datagen_custom.html">
+   Data Generation for Custom Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/task_visualizations.html">
+   Task Visualizations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/subtask_termination_signals.html">
+   Subtask Termination Signals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/debugging_datagen.html">
+   Debugging Data Generation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/overview.html">
+   Codebase Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/datagen.html">
+   Data Generation Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/task_spec.html">
+   Task Spec
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/env_interfaces.html">
+   Environment Interfaces
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/troubleshooting.html">
+   Troubleshooting and Known Issues
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Source API
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="mimicgen.html">
+   mimicgen package
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="mimicgen.configs.html">
+     mimicgen.configs package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mimicgen.datagen.html">
+     mimicgen.datagen package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mimicgen.env_interfaces.html">
+     mimicgen.env_interfaces package
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="mimicgen.envs.html">
+     mimicgen.envs package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="mimicgen.envs.robosuite.html">
+       mimicgen.envs.robosuite package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     mimicgen.scripts package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mimicgen.utils.html">
+     mimicgen.utils package
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../sources/api/mimicgen.scripts.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.annotate_subtasks">
+   mimicgen.scripts.annotate_subtasks module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.demo_random_action">
+   mimicgen.scripts.demo_random_action module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.download_datasets">
+   mimicgen.scripts.download_datasets module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.generate_config_templates">
+   mimicgen.scripts.generate_config_templates module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.generate_core_configs">
+   mimicgen.scripts.generate_core_configs module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.generate_core_training_configs">
+   mimicgen.scripts.generate_core_training_configs module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.generate_dataset">
+   mimicgen.scripts.generate_dataset module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.generate_robot_transfer_configs">
+   mimicgen.scripts.generate_robot_transfer_configs module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.generate_robot_transfer_training_configs">
+   mimicgen.scripts.generate_robot_transfer_training_configs module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.generate_training_configs_for_public_datasets">
+   mimicgen.scripts.generate_training_configs_for_public_datasets module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.get_reset_videos">
+   mimicgen.scripts.get_reset_videos module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.get_source_info">
+   mimicgen.scripts.get_source_info module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.merge_hdf5">
+   mimicgen.scripts.merge_hdf5 module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.prepare_src_dataset">
+   mimicgen.scripts.prepare_src_dataset module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.visualize_subtasks">
+   mimicgen.scripts.visualize_subtasks module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>mimicgen.scripts package</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.annotate_subtasks">
+   mimicgen.scripts.annotate_subtasks module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.demo_random_action">
+   mimicgen.scripts.demo_random_action module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.download_datasets">
+   mimicgen.scripts.download_datasets module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.generate_config_templates">
+   mimicgen.scripts.generate_config_templates module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.generate_core_configs">
+   mimicgen.scripts.generate_core_configs module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.generate_core_training_configs">
+   mimicgen.scripts.generate_core_training_configs module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.generate_dataset">
+   mimicgen.scripts.generate_dataset module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.generate_robot_transfer_configs">
+   mimicgen.scripts.generate_robot_transfer_configs module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.generate_robot_transfer_training_configs">
+   mimicgen.scripts.generate_robot_transfer_training_configs module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.generate_training_configs_for_public_datasets">
+   mimicgen.scripts.generate_training_configs_for_public_datasets module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.get_reset_videos">
+   mimicgen.scripts.get_reset_videos module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.get_source_info">
+   mimicgen.scripts.get_source_info module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.merge_hdf5">
+   mimicgen.scripts.merge_hdf5 module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.prepare_src_dataset">
+   mimicgen.scripts.prepare_src_dataset module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts.visualize_subtasks">
+   mimicgen.scripts.visualize_subtasks module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.scripts">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="mimicgen-scripts-package">
+<h1>mimicgen.scripts package<a class="headerlink" href="#mimicgen-scripts-package" title="Permalink to this headline">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="module-mimicgen.scripts.annotate_subtasks">
+<span id="mimicgen-scripts-annotate-subtasks-module"></span><h2>mimicgen.scripts.annotate_subtasks module<a class="headerlink" href="#module-mimicgen.scripts.annotate_subtasks" title="Permalink to this headline">#</a></h2>
+<p>A script to playback demonstrations (using visual observations and the pygame renderer)
+in order to allow a user to annotate portions of the demonstrations. This is useful
+to annotate the end of each object-centric subtask in each source demonstration used
+by MimicGen, as an alternative to implementing subtask termination signals directly
+in the simulation environment.</p>
+<p class="rubric">Examples</p>
+<p># specify the sequence of signals that should be annotated and the dataset images to render on-screen
+python annotate_subtasks.py –dataset /path/to/demo.hdf5 –signals grasp_1 insert_1 grasp_2         –render_image_names agentview_image robot0_eye_in_hand_image</p>
+<p># limit annotation to first 2 demos
+python annotate_subtasks.py –dataset /path/to/demo.hdf5 –signals grasp_1 insert_1 grasp_2         –render_image_names agentview_image robot0_eye_in_hand_image –n 2</p>
+<p># limit annotation to demo 2 and 3
+python annotate_subtasks.py –dataset /path/to/demo.hdf5 –signals grasp_1 insert_1 grasp_2         –render_image_names agentview_image robot0_eye_in_hand_image –n 2 –start 1</p>
+<p># scale up dataset images when rendering to screen by factor of 10
+python annotate_subtasks.py –dataset /path/to/demo.hdf5 –signals grasp_1 insert_1 grasp_2         –render_image_names agentview_image robot0_eye_in_hand_image –image_scale 10</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.annotate_subtasks.annotate_subtasks">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.annotate_subtasks.</span></span><span class="sig-name descname"><span class="pre">annotate_subtasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.annotate_subtasks.annotate_subtasks" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.annotate_subtasks.annotate_subtasks_in_trajectory">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.annotate_subtasks.</span></span><span class="sig-name descname"><span class="pre">annotate_subtasks_in_trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ep</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">traj_grp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtask_signals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">screen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">playback_rate_grid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.annotate_subtasks.annotate_subtasks_in_trajectory" title="Permalink to this definition">#</a></dt>
+<dd><p>This function reads all “rgb” observations in the dataset trajectory and
+writes them into a video.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ep</strong> (<em>str</em>) – name of hdf5 group for this demo</p></li>
+<li><p><strong>traj_grp</strong> (<em>hdf5 file group</em>) – hdf5 group which corresponds to the dataset trajectory to annotate</p></li>
+<li><p><strong>subtask_signals</strong> (<em>list</em>) – list of subtask termination signals that will be annotated</p></li>
+<li><p><strong>screen</strong> – pygame screen</p></li>
+<li><p><strong>video_skip</strong> (<em>int</em>) – determines rate at which environment frames are written to video</p></li>
+<li><p><strong>image_names</strong> (<em>list</em>) – determines which image observations are used for rendering. Pass more than
+one to output a video with multiple image observations concatenated horizontally.</p></li>
+<li><p><strong>playback_rate_grid</strong> (<a class="reference internal" href="mimicgen.utils.html#mimicgen.utils.misc_utils.Grid" title="mimicgen.utils.misc_utils.Grid"><em>Grid</em></a>) – grid object to easily toggle between different playback rates</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.annotate_subtasks.handle_pygame_events">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.annotate_subtasks.</span></span><span class="sig-name descname"><span class="pre">handle_pygame_events</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame_ind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtask_signals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtask_ind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">need_repeat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annotation_done</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">playback_rate_grid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.annotate_subtasks.handle_pygame_events" title="Permalink to this definition">#</a></dt>
+<dd><p>Reads events from pygame window in order to provide the
+following keyboard annotation functionality:</p>
+<blockquote>
+<div><p>up-down     | increase / decrease playback speed
+left-right  | seek left / right by N frames
+spacebar    | press and release to annotate the end of a subtask
+f           | next demo and save annotations
+r           | repeat demo and clear annotations</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frame_ind</strong> (<em>int</em>) – index of current frame in demonstration</p></li>
+<li><p><strong>subtask_signals</strong> (<em>list</em>) – list of subtask termination signals that we will annotate</p></li>
+<li><p><strong>subtask_ind</strong> (<em>int</em>) – index of current subtask (state variable)</p></li>
+<li><p><strong>rate_obj</strong> (<a class="reference internal" href="mimicgen.utils.html#mimicgen.utils.misc_utils.Rate" title="mimicgen.utils.misc_utils.Rate"><em>Rate</em></a>) – rate object to maintain playback rate</p></li>
+<li><p><strong>need_repeat</strong> (<em>bool</em>) – whether the demo should be repeated (state variable)</p></li>
+<li><p><strong>annotation_done</strong> (<em>bool</em>) – whether user is done annotating this demo (state variable)</p></li>
+<li><p><strong>playback_rate_grid</strong> (<a class="reference internal" href="mimicgen.utils.html#mimicgen.utils.misc_utils.Grid" title="mimicgen.utils.misc_utils.Grid"><em>Grid</em></a>) – grid object to easily toggle between different playback rates</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>end index for current subtask, annotated by human, or None if no annotation
+subtask_ind (int): possibly updated subtask index
+need_repeat (bool): possibly updated value
+annotation_done (bool): possibly updated value
+seek (int): how much to seek forward or backward in demonstration (value read from user command)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>subtask_end_ind (int or None)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.annotate_subtasks.make_pygame_screen">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.annotate_subtasks.</span></span><span class="sig-name descname"><span class="pre">make_pygame_screen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">traj_grp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.annotate_subtasks.make_pygame_screen" title="Permalink to this definition">#</a></dt>
+<dd><p>Makes pygame screen.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>traj_grp</strong> (<em>h5py.Group</em>) – group for a demonstration trajectory</p></li>
+<li><p><strong>image_names</strong> (<em>list</em>) – list of image names that will be used for rendering</p></li>
+<li><p><strong>image_scale</strong> (<em>int</em>) – scaling factor for the image to diplay in window</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>pygame screen object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>screen</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.annotate_subtasks.print_keyboard_commands">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.annotate_subtasks.</span></span><span class="sig-name descname"><span class="pre">print_keyboard_commands</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.annotate_subtasks.print_keyboard_commands" title="Permalink to this definition">#</a></dt>
+<dd><p>Helper function to print keyboard annotation commands.</p>
+</dd></dl>
+
+</section>
+<section id="module-mimicgen.scripts.demo_random_action">
+<span id="mimicgen-scripts-demo-random-action-module"></span><h2>mimicgen.scripts.demo_random_action module<a class="headerlink" href="#module-mimicgen.scripts.demo_random_action" title="Permalink to this headline">#</a></h2>
+<p>Script that offers an easy way to test random actions in a MimicGen environment.
+Similar to the demo_random_action.py script from robosuite.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.demo_random_action.choose_mimicgen_environment">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.demo_random_action.</span></span><span class="sig-name descname"><span class="pre">choose_mimicgen_environment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.demo_random_action.choose_mimicgen_environment" title="Permalink to this definition">#</a></dt>
+<dd><p>Prints out environment options, and returns the selected env_name choice</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Chosen environment name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-mimicgen.scripts.download_datasets">
+<span id="mimicgen-scripts-download-datasets-module"></span><h2>mimicgen.scripts.download_datasets module<a class="headerlink" href="#module-mimicgen.scripts.download_datasets" title="Permalink to this headline">#</a></h2>
+<p>Script to download datasets packaged with the repository.</p>
+</section>
+<section id="module-mimicgen.scripts.generate_config_templates">
+<span id="mimicgen-scripts-generate-config-templates-module"></span><h2>mimicgen.scripts.generate_config_templates module<a class="headerlink" href="#module-mimicgen.scripts.generate_config_templates" title="Permalink to this headline">#</a></h2>
+<p>Helpful script to generate example config files, one per config class. These should be re-generated
+when new config options are added, or when default settings in the config classes are modified.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_config_templates.main">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_config_templates.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_config_templates.main" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-mimicgen.scripts.generate_core_configs">
+<span id="mimicgen-scripts-generate-core-configs-module"></span><h2>mimicgen.scripts.generate_core_configs module<a class="headerlink" href="#module-mimicgen.scripts.generate_core_configs" title="Permalink to this headline">#</a></h2>
+<p>We utilize robomimic’s config generator class to easily generate data generation configs for our
+core set of tasks in the paper. It can be modified easily to generate other configs.</p>
+<p>The global variables at the top of the file should be configured manually.</p>
+<p>See <a class="reference external" href="https://robomimic.github.io/docs/tutorials/hyperparam_scan.html">https://robomimic.github.io/docs/tutorials/hyperparam_scan.html</a> for more info.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_core_configs.main">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_core_configs.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_core_configs.main" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_core_configs.make_generator">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_core_configs.</span></span><span class="sig-name descname"><span class="pre">make_generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">settings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_core_configs.make_generator" title="Permalink to this definition">#</a></dt>
+<dd><p>Implement this function to setup your own hyperparameter scan.
+Each config generator is created using a base config file (&#64;config_file)
+and a &#64;settings dictionary that can be used to modify which parameters
+are set.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_core_configs.make_generators">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_core_configs.</span></span><span class="sig-name descname"><span class="pre">make_generators</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_configs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_core_configs.make_generators" title="Permalink to this definition">#</a></dt>
+<dd><p>An easy way to make multiple config generators by using different
+settings for each.</p>
+</dd></dl>
+
+</section>
+<section id="module-mimicgen.scripts.generate_core_training_configs">
+<span id="mimicgen-scripts-generate-core-training-configs-module"></span><h2>mimicgen.scripts.generate_core_training_configs module<a class="headerlink" href="#module-mimicgen.scripts.generate_core_training_configs" title="Permalink to this headline">#</a></h2>
+<p>We utilize robomimic’s config generator class to easily generate policy training configs for the
+core set of experiments in the paper. It can be modified easily to generate other
+training configs.</p>
+<p>See <a class="reference external" href="https://robomimic.github.io/docs/tutorials/hyperparam_scan.html">https://robomimic.github.io/docs/tutorials/hyperparam_scan.html</a> for more info.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_core_training_configs.main">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_core_training_configs.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_core_training_configs.main" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_core_training_configs.make_gen">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_core_training_configs.</span></span><span class="sig-name descname"><span class="pre">make_gen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">settings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mod</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_core_training_configs.make_gen" title="Permalink to this definition">#</a></dt>
+<dd><p>Specify training configs to generate here.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_core_training_configs.make_generators">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_core_training_configs.</span></span><span class="sig-name descname"><span class="pre">make_generators</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_core_training_configs.make_generators" title="Permalink to this definition">#</a></dt>
+<dd><p>An easy way to make multiple config generators by using different
+settings for each.</p>
+</dd></dl>
+
+</section>
+<section id="module-mimicgen.scripts.generate_dataset">
+<span id="mimicgen-scripts-generate-dataset-module"></span><h2>mimicgen.scripts.generate_dataset module<a class="headerlink" href="#module-mimicgen.scripts.generate_dataset" title="Permalink to this headline">#</a></h2>
+<p>Main data generation script.</p>
+<p class="rubric">Examples</p>
+<p># run normal data generation
+python generate_dataset.py –config /path/to/config.json</p>
+<p># render all data generation attempts on-screen
+python generate_dataset.py –config /path/to/config.json –render</p>
+<p># render all data generation attempts to a video
+python generate_dataset.py –config /path/to/config.json –video_path /path/to/video.mp4</p>
+<p># run a quick debug run
+python generate_dataset.py –config /path/to/config.json –debug</p>
+<p># pause after every subtask to debug data generation
+python generate_dataset.py –config /path/to/config.json –render –pause_subtask</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_dataset.generate_dataset">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_dataset.</span></span><span class="sig-name descname"><span class="pre">generate_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mg_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_remove_exp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_skip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render_image_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pause_subtask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_dataset.generate_dataset" title="Permalink to this definition">#</a></dt>
+<dd><p>Main function to collect a new dataset with MimicGen.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mg_config</strong> (<em>MG_Config instance</em>) – MimicGen config object</p></li>
+<li><p><strong>auto_remove_exp</strong> (<em>bool</em>) – if True, will remove generation folder if it exists, else
+user will be prompted to decide whether to keep existing folder or not</p></li>
+<li><p><strong>render</strong> (<em>bool</em>) – if True, render each data generation attempt on-screen</p></li>
+<li><p><strong>video_path</strong> (<em>str</em><em> or </em><em>None</em>) – if provided, render the data generation attempts to the
+provided video path</p></li>
+<li><p><strong>video_skip</strong> (<em>int</em>) – skip every nth frame when writing video</p></li>
+<li><p><strong>render_image_names</strong> (<em>list of str</em><em> or </em><em>None</em>) – if provided, specify camera names to
+use during on-screen / off-screen rendering to override defaults</p></li>
+<li><p><strong>pause_subtask</strong> (<em>bool</em>) – if True, pause after every subtask during generation, for
+debugging.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_dataset.get_important_stats">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_dataset.</span></span><span class="sig-name descname"><span class="pre">get_important_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_dataset_folder_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_success</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_failures</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_attempts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_problematic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ep_length_stats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_dataset.get_important_stats" title="Permalink to this definition">#</a></dt>
+<dd><p>Return a summary of important stats to write to json.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>new_dataset_folder_path</strong> (<em>str</em>) – path to folder that will contain generated dataset</p></li>
+<li><p><strong>num_success</strong> (<em>int</em>) – number of successful trajectories generated</p></li>
+<li><p><strong>num_failures</strong> (<em>int</em>) – number of failed trajectories</p></li>
+<li><p><strong>num_attempts</strong> (<em>int</em>) – number of total attempts</p></li>
+<li><p><strong>num_problematic</strong> (<em>int</em>) – number of problematic trajectories that failed due
+to a specific exception that was caught</p></li>
+<li><p><strong>start_time</strong> (<em>float</em><em> or </em><em>None</em>) – starting time for this run from time.time()</p></li>
+<li><p><strong>ep_length_stats</strong> (<em>dict</em><em> or </em><em>None</em>) – if provided, should have entries that summarize
+the episode length statistics over the successfully generated trajectories</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dictionary with useful summary of statistics</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>important_stats (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_dataset.main">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_dataset.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_dataset.main" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-mimicgen.scripts.generate_robot_transfer_configs">
+<span id="mimicgen-scripts-generate-robot-transfer-configs-module"></span><h2>mimicgen.scripts.generate_robot_transfer_configs module<a class="headerlink" href="#module-mimicgen.scripts.generate_robot_transfer_configs" title="Permalink to this headline">#</a></h2>
+<p>We utilize robomimic’s config generator class to easily generate data generation configs for the
+robot transfer set of experiments in the paper, where we use source data collected on the Panda arm
+to generate demonstrations for other robot arms. It can be modified easily to generate other configs.</p>
+<p>The global variables at the top of the file should be configured manually.</p>
+<p>See <a class="reference external" href="https://robomimic.github.io/docs/tutorials/hyperparam_scan.html">https://robomimic.github.io/docs/tutorials/hyperparam_scan.html</a> for more info.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_robot_transfer_configs.main">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_robot_transfer_configs.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_robot_transfer_configs.main" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_robot_transfer_configs.make_generator">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_robot_transfer_configs.</span></span><span class="sig-name descname"><span class="pre">make_generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">settings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_robot_transfer_configs.make_generator" title="Permalink to this definition">#</a></dt>
+<dd><p>Implement this function to setup your own hyperparameter scan.
+Each config generator is created using a base config file (&#64;config_file)
+and a &#64;settings dictionary that can be used to modify which parameters
+are set.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_robot_transfer_configs.make_generators">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_robot_transfer_configs.</span></span><span class="sig-name descname"><span class="pre">make_generators</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_configs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_robot_transfer_configs.make_generators" title="Permalink to this definition">#</a></dt>
+<dd><p>An easy way to make multiple config generators by using different
+settings for each.</p>
+</dd></dl>
+
+</section>
+<section id="module-mimicgen.scripts.generate_robot_transfer_training_configs">
+<span id="mimicgen-scripts-generate-robot-transfer-training-configs-module"></span><h2>mimicgen.scripts.generate_robot_transfer_training_configs module<a class="headerlink" href="#module-mimicgen.scripts.generate_robot_transfer_training_configs" title="Permalink to this headline">#</a></h2>
+<p>We utilize robomimic’s config generator class to easily generate policy training configs for the
+robot transfer set of experiments in the paper, where we use source data collected on the Panda arm
+to generate demonstrations for other robot arms. It can be modified easily to generate other
+training configs.</p>
+<p>See <a class="reference external" href="https://robomimic.github.io/docs/tutorials/hyperparam_scan.html">https://robomimic.github.io/docs/tutorials/hyperparam_scan.html</a> for more info.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_robot_transfer_training_configs.main">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_robot_transfer_training_configs.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_robot_transfer_training_configs.main" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_robot_transfer_training_configs.make_gen">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_robot_transfer_training_configs.</span></span><span class="sig-name descname"><span class="pre">make_gen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">settings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mod</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_robot_transfer_training_configs.make_gen" title="Permalink to this definition">#</a></dt>
+<dd><p>Specify training configs to generate here.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_robot_transfer_training_configs.make_generators">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_robot_transfer_training_configs.</span></span><span class="sig-name descname"><span class="pre">make_generators</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_robot_transfer_training_configs.make_generators" title="Permalink to this definition">#</a></dt>
+<dd><p>An easy way to make multiple config generators by using different
+settings for each.</p>
+</dd></dl>
+
+</section>
+<section id="module-mimicgen.scripts.generate_training_configs_for_public_datasets">
+<span id="mimicgen-scripts-generate-training-configs-for-public-datasets-module"></span><h2>mimicgen.scripts.generate_training_configs_for_public_datasets module<a class="headerlink" href="#module-mimicgen.scripts.generate_training_configs_for_public_datasets" title="Permalink to this headline">#</a></h2>
+<p>Script to generate json configs for use with robomimic to reproduce the
+policy learning results in the MimicGen paper.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_training_configs_for_public_datasets.generate_all_configs">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_training_configs_for_public_datasets.</span></span><span class="sig-name descname"><span class="pre">generate_all_configs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_config_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_dataset_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_output_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_training_configs_for_public_datasets.generate_all_configs" title="Permalink to this definition">#</a></dt>
+<dd><p>Helper function to generate all configs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_config_dir</strong> (<em>str</em>) – base directory to place generated configs</p></li>
+<li><p><strong>base_dataset_dir</strong> (<em>str</em>) – path to directory where datasets are on disk.
+Directory structure is expected to be consistent with the output
+of &#64;make_dataset_dirs in the download_datasets.py script.</p></li>
+<li><p><strong>base_output_dir</strong> (<em>str</em>) – directory to save training results to. If None, will use the directory
+from the default algorithm configs.</p></li>
+<li><p><strong>algo_to_config_modifier</strong> (<em>dict</em>) – dictionary that maps algo name to a function that modifies configs
+to add algo hyperparameter settings, given the task, dataset, and hdf5 types.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_training_configs_for_public_datasets.generate_experiment_config">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_training_configs_for_public_datasets.</span></span><span class="sig-name descname"><span class="pre">generate_experiment_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_exp_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_config_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_dataset_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_modality</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_training_configs_for_public_datasets.generate_experiment_config" title="Permalink to this definition">#</a></dt>
+<dd><p>Helper function to generate a config for a particular experiment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_exp_name</strong> (<em>str</em>) – name that identifies this set of experiments</p></li>
+<li><p><strong>base_config_dir</strong> (<em>str</em>) – base directory to place generated configs</p></li>
+<li><p><strong>base_dataset_dir</strong> (<em>str</em>) – path to directory where datasets are on disk.
+Directory structure is expected to be consistent with the output
+of &#64;make_dataset_dirs in the download_datasets.py script.</p></li>
+<li><p><strong>base_output_dir</strong> (<em>str</em>) – directory to save training results to. If None, will use the directory
+from the default algorithm configs.</p></li>
+<li><p><strong>dataset_type</strong> (<em>str</em>) – identifies the type of dataset (e.g. source human data,
+core experiment data, object transfer data)</p></li>
+<li><p><strong>task_name</strong> (<em>str</em>) – identify task that dataset was collected on</p></li>
+<li><p><strong>obs_modality</strong> (<em>str</em>) – observation modality (either low-dim or image)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_training_configs_for_public_datasets.modify_config_for_dataset">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_training_configs_for_public_datasets.</span></span><span class="sig-name descname"><span class="pre">modify_config_for_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_modality</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_dataset_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_training_configs_for_public_datasets.modify_config_for_dataset" title="Permalink to this definition">#</a></dt>
+<dd><p>Modifies a Config object with experiment, training, and observation settings to
+correspond to experiment settings for the dataset of type &#64;dataset_type collected on &#64;task_name. This
+mostly just sets the rollout horizon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config</strong> (<em>Config instance</em>) – config to modify</p></li>
+<li><p><strong>dataset_type</strong> (<em>str</em>) – identifies the type of dataset (e.g. source human data,
+core experiment data, object transfer data)</p></li>
+<li><p><strong>task_name</strong> (<em>str</em>) – identify task that dataset was collected on</p></li>
+<li><p><strong>obs_modality</strong> (<em>str</em>) – observation modality (either low-dim or image)</p></li>
+<li><p><strong>base_dataset_dir</strong> (<em>str</em>) – path to directory where datasets are on disk.
+Directory structure is expected to be consistent with the output
+of &#64;make_dataset_dirs in the download_datasets.py script.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_training_configs_for_public_datasets.set_obs_config">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_training_configs_for_public_datasets.</span></span><span class="sig-name descname"><span class="pre">set_obs_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obs_modality</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_training_configs_for_public_datasets.set_obs_config" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets specific config settings related to running low-dim or image experiments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config</strong> (<em>BCConfig instance</em>) – config to modify</p></li>
+<li><p><strong>obs_modality</strong> (<em>str</em>) – observation modality (either low-dim or image)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.generate_training_configs_for_public_datasets.set_rnn_config">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.generate_training_configs_for_public_datasets.</span></span><span class="sig-name descname"><span class="pre">set_rnn_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.generate_training_configs_for_public_datasets.set_rnn_config" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets RNN settings in config.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config</strong> (<em>BCConfig instance</em>) – config to modify</p></li>
+<li><p><strong>obs_modality</strong> (<em>str</em>) – observation modality (either low-dim or image)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-mimicgen.scripts.get_reset_videos">
+<span id="mimicgen-scripts-get-reset-videos-module"></span><h2>mimicgen.scripts.get_reset_videos module<a class="headerlink" href="#module-mimicgen.scripts.get_reset_videos" title="Permalink to this headline">#</a></h2>
+<p>Helper script to get task reset distribution videos.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.get_reset_videos.make_reset_video">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.get_reset_videos.</span></span><span class="sig-name descname"><span class="pre">make_reset_video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robot_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_frames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gripper_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.get_reset_videos.make_reset_video" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-mimicgen.scripts.get_source_info">
+<span id="mimicgen-scripts-get-source-info-module"></span><h2>mimicgen.scripts.get_source_info module<a class="headerlink" href="#module-mimicgen.scripts.get_source_info" title="Permalink to this headline">#</a></h2>
+<p>Helper script to report source dataset information. It verifies that the dataset has a
+“datagen_info” field for the first episode and prints its structure.</p>
+</section>
+<section id="module-mimicgen.scripts.merge_hdf5">
+<span id="mimicgen-scripts-merge-hdf5-module"></span><h2>mimicgen.scripts.merge_hdf5 module<a class="headerlink" href="#module-mimicgen.scripts.merge_hdf5" title="Permalink to this headline">#</a></h2>
+<p>Script to merge all hdf5s if scripts/generate_dataset.py is incomplete,
+and doesn’t make it to the line that merges all the hdf5s.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.merge_hdf5.merge_hdf5s">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.merge_hdf5.</span></span><span class="sig-name descname"><span class="pre">merge_hdf5s</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.merge_hdf5.merge_hdf5s" title="Permalink to this definition">#</a></dt>
+<dd><p>Main function to collect a new dataset using trajectory transforms from
+an existing dataset.</p>
+</dd></dl>
+
+</section>
+<section id="module-mimicgen.scripts.prepare_src_dataset">
+<span id="mimicgen-scripts-prepare-src-dataset-module"></span><h2>mimicgen.scripts.prepare_src_dataset module<a class="headerlink" href="#module-mimicgen.scripts.prepare_src_dataset" title="Permalink to this headline">#</a></h2>
+<p>Script to extract information needed for data generation from low-dimensional simulation states
+in a source dataset and add it to the source dataset. Basically a stripped down version of
+dataset_states_to_obs.py script in the robomimic codebase, with a handful of modifications.</p>
+<p>Example usage:</p>
+<blockquote>
+<div><p># prepare a source dataset collected on robosuite Stack task
+python prepare_src_dataset.py –dataset /path/to/stack.hdf5 –env_interface MG_Stack –env_interface_type robosuite</p>
+<p># prepare a source dataset collected on robosuite Square task, but only use first 10 demos, and write output to new hdf5
+python prepare_src_dataset.py –dataset /path/to/square.hdf5 –env_interface MG_Square –env_interface_type robosuite –n 10 –output /tmp/square_new.hdf5</p>
+</div></blockquote>
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.prepare_src_dataset.extract_datagen_info_from_trajectory">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.prepare_src_dataset.</span></span><span class="sig-name descname"><span class="pre">extract_datagen_info_from_trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_interface</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">states</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.prepare_src_dataset.extract_datagen_info_from_trajectory" title="Permalink to this definition">#</a></dt>
+<dd><p>Helper function to extract observations, rewards, and dones along a trajectory using
+the simulator environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>env</strong> (<em>instance of robomimic EnvBase</em>) – environment</p></li>
+<li><p><strong>env_interface</strong> (<em>MG_EnvInterface instance</em>) – environment interface for some data generation operations</p></li>
+<li><p><strong>initial_state</strong> (<em>dict</em>) – initial simulation state to load</p></li>
+<li><p><strong>states</strong> (<em>np.array</em>) – array of simulation states to load to extract information</p></li>
+<li><p><strong>actions</strong> (<em>np.array</em>) – array of actions</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>the datagen info objects across all timesteps represented as a dictionary of</dt><dd><p>numpy arrays, for easy writes to an hdf5</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>datagen_infos (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.prepare_src_dataset.prepare_src_dataset">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.prepare_src_dataset.</span></span><span class="sig-name descname"><span class="pre">prepare_src_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_interface_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_interface_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.prepare_src_dataset.prepare_src_dataset" title="Permalink to this definition">#</a></dt>
+<dd><p>Adds DatagenInfo object instance for each timestep in each source demonstration trajectory
+and stores it under the “datagen_info” key for each episode. Also store the &#64;env_interface_name
+and &#64;env_interface_type used in the attribute of each key. This information is used during
+MimicGen data generation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_path</strong> (<em>str</em>) – path to input hdf5 dataset, which will be modified in-place unless
+&#64;output_path is provided</p></li>
+<li><p><strong>env_interface_name</strong> (<em>str</em>) – name of environment interface class to use for this source dataset</p></li>
+<li><p><strong>env_interface_type</strong> (<em>str</em>) – type of environment interface to use for this source dataset</p></li>
+<li><p><strong>filter_key</strong> (<em>str</em><em> or </em><em>None</em>) – name of filter key</p></li>
+<li><p><strong>n</strong> (<em>int</em><em> or </em><em>None</em>) – if provided, stop after n trajectories are processed</p></li>
+<li><p><strong>output_path</strong> (<em>str</em><em> or </em><em>None</em>) – if provided, write a new hdf5 here instead of modifying the
+original dataset in-place</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-mimicgen.scripts.visualize_subtasks">
+<span id="mimicgen-scripts-visualize-subtasks-module"></span><h2>mimicgen.scripts.visualize_subtasks module<a class="headerlink" href="#module-mimicgen.scripts.visualize_subtasks" title="Permalink to this headline">#</a></h2>
+<p>A script to visualize each subtask in a source demonstration. This is a useful way to
+debug the subtask termination signals in a set of source demonstrations, as well as
+the choice of maximum subtask termination offsets.</p>
+<p class="rubric">Examples</p>
+<p># render on-screen
+python visualize_subtasks.py –dataset /path/to/demo.hdf5 –config /path/to/config.json –render</p>
+<p># render to video
+python visualize_subtasks.py –dataset /path/to/demo.hdf5 –config /path/to/config.json –video_path /path/to/video.mp4</p>
+<p># specify subtask information manually instead of using a config
+python visualize_subtasks.py –dataset /path/to/demo.hdf5 –signals grasp_1 insert_1 grasp_2 –offsets 10 10 10 –render</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.visualize_subtasks.visualize_subtasks">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.visualize_subtasks.</span></span><span class="sig-name descname"><span class="pre">visualize_subtasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.visualize_subtasks.visualize_subtasks" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.visualize_subtasks.visualize_subtasks_with_env">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.visualize_subtasks.</span></span><span class="sig-name descname"><span class="pre">visualize_subtasks_with_env</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">states</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtask_end_indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_writer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_skip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.visualize_subtasks.visualize_subtasks_with_env" title="Permalink to this definition">#</a></dt>
+<dd><p>Helper function to visualize each subtask in a trajectory using the simulator environment.
+If using on-screen rendering, the script will pause for input at the end of each subtask. If
+writing to a video, each subtask will toggle between having a red border around each
+frame and no border in the video.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>env</strong> (<em>instance of EnvBase</em>) – environment</p></li>
+<li><p><strong>initial_state</strong> (<em>dict</em>) – initial simulation state to load</p></li>
+<li><p><strong>states</strong> (<em>list</em>) – list of simulation states to load</p></li>
+<li><p><strong>subtask_end_indices</strong> (<em>list</em>) – list containing the end index for each subtask</p></li>
+<li><p><strong>render</strong> (<em>bool</em>) – if True, render on-screen</p></li>
+<li><p><strong>video_writer</strong> (<em>imageio writer</em>) – video writer</p></li>
+<li><p><strong>video_skip</strong> (<em>int</em>) – determines rate at which environment frames are written to video</p></li>
+<li><p><strong>camera_names</strong> (<em>list</em>) – determines which camera(s) are used for rendering. Pass more than
+one to output a video with multiple camera views concatenated horizontally.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.scripts.visualize_subtasks.visualize_subtasks_with_obs">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.scripts.visualize_subtasks.</span></span><span class="sig-name descname"><span class="pre">visualize_subtasks_with_obs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">traj_grp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtask_end_indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_writer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_skip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.scripts.visualize_subtasks.visualize_subtasks_with_obs" title="Permalink to this definition">#</a></dt>
+<dd><p>Helper function to visualize each subtask in a trajectory by writing image observations
+to a video. Each subtask will toggle between having a red border around each
+frame and no border in the video.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>traj_grp</strong> (<em>hdf5 file group</em>) – hdf5 group which corresponds to the dataset trajectory to playback</p></li>
+<li><p><strong>subtask_end_indices</strong> (<em>list</em>) – list containing the end index for each subtask</p></li>
+<li><p><strong>video_writer</strong> (<em>imageio writer</em>) – video writer</p></li>
+<li><p><strong>video_skip</strong> (<em>int</em>) – determines rate at which environment frames are written to video</p></li>
+<li><p><strong>image_names</strong> (<em>list</em>) – determines which image observations are used for rendering. Pass more than
+one to output a video with multiple image observations concatenated horizontally.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-mimicgen.scripts">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mimicgen.scripts" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="mimicgen.envs.robosuite.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">mimicgen.envs.robosuite package</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="mimicgen.utils.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">mimicgen.utils package</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ajay Mandlekar<br/>
+  
+      &copy; Copyright 2023-2024, NVIDIA.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
