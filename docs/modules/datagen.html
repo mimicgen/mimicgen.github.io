@@ -1,0 +1,815 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Data Generation Classes &#8212; mimicgen 1.0 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
+    <script src="../static/jquery.js"></script>
+    <script src="../static/underscore.js"></script>
+    <script src="../static/doctools.js"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Task Spec" href="task_spec.html" />
+    <link rel="prev" title="Codebase Overview" href="overview.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../static/mimicgen_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">mimicgen 1.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/installation.html">
+   Installation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Datasets
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/mimicgen_corl_2023.html">
+   MimicGen (CoRL 2023)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
+   Reproducing Published Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/launching_several.html">
+   Launching Several Data Generation Runs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/datagen_custom.html">
+   Data Generation for Custom Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/task_visualizations.html">
+   Task Visualizations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/subtask_termination_signals.html">
+   Subtask Termination Signals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/debugging_datagen.html">
+   Debugging Data Generation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Codebase Overview
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Data Generation Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="task_spec.html">
+   Task Spec
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="env_interfaces.html">
+   Environment Interfaces
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/troubleshooting.html">
+   Troubleshooting and Known Issues
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Source API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api/mimicgen.html">
+   mimicgen package
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.configs.html">
+     mimicgen.configs package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.datagen.html">
+     mimicgen.datagen package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.env_interfaces.html">
+     mimicgen.env_interfaces package
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../api/mimicgen.envs.html">
+     mimicgen.envs package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/mimicgen.envs.robosuite.html">
+       mimicgen.envs.robosuite package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.scripts.html">
+     mimicgen.scripts package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.utils.html">
+     mimicgen.utils package
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../sources/modules/datagen.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-generator">
+   Data Generator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datagen-info">
+   Datagen Info
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selection-strategy">
+   Selection Strategy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#waypoint">
+   Waypoint
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#waypoint-class-variants">
+     Waypoint Class Variants
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#waypoint-class-usage-during-data-generation">
+     Waypoint Class Usage during Data Generation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Data Generation Classes</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-generator">
+   Data Generator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datagen-info">
+   Datagen Info
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selection-strategy">
+   Selection Strategy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#waypoint">
+   Waypoint
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#waypoint-class-variants">
+     Waypoint Class Variants
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#waypoint-class-usage-during-data-generation">
+     Waypoint Class Usage during Data Generation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="data-generation-classes">
+<h1>Data Generation Classes<a class="headerlink" href="#data-generation-classes" title="Permalink to this headline">#</a></h1>
+<p>This section discusses the key classes related to data generation.</p>
+<section id="data-generator">
+<h2>Data Generator<a class="headerlink" href="#data-generator" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">DataGenerator</span></code> class (<code class="docutils literal notranslate"><span class="pre">datagen/data_generator.py</span></code>) is responsible for generating new demonstration trajectories. First, the internal <code class="docutils literal notranslate"><span class="pre">_load_dataset</span></code> method is used to parse the source dataset (using <a class="reference external" href="https://mimicgen.github.io/docs/tutorials/subtask_termination_signals.html">Subtask Termination Signals</a>) into source subtask segments. Each segment is a sequence of <a class="reference external" href="https://mimicgen.github.io/docs/modules/datagen.html#datagen-info">DatagenInfo</a> objects. Then, the <code class="docutils literal notranslate"><span class="pre">generate</span></code> method is called repeatedly (by the main script <code class="docutils literal notranslate"><span class="pre">scripts/generate_dataset.py</span></code>) to keep attempting to generate new trajectories using the source subtask segments. During each new attempt, the <code class="docutils literal notranslate"><span class="pre">select_source_demo</span></code> method is used to employ a <a class="reference external" href="https://mimicgen.github.io/docs/modules/datagen.html#selection-strategy">SelectionStrategy</a> to pick a reference source subtask segment to transform. <a class="reference external" href="https://mimicgen.github.io/docs/modules/datagen.html#waypoint">WaypointTrajectory</a> objects are used to transform and compose subtask segments together.</p>
+</section>
+<section id="datagen-info">
+<h2>Datagen Info<a class="headerlink" href="#datagen-info" title="Permalink to this headline">#</a></h2>
+<p>DatagenInfo objects keep track of important information used during data generation. These objects are added to source demonstrations with the <code class="docutils literal notranslate"><span class="pre">prepare_src_dataset.py</span></code> script, or provided directly by an <a class="reference external" href="https://mimicgen.github.io/docs/modules/env_interfaces.html">Environment Interface</a> object.</p>
+<p>The structure of the object is below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DatagenInfo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Structure of information needed from an environment for data generation. To allow for</span>
+<span class="sd">    flexibility, not all information must be present.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">eef_pose</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">object_poses</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">subtask_term_signals</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">target_pose</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">gripper_action</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Args:</span>
+<span class="sd">            eef_pose (np.array or None): robot end effector poses of shape [..., 4, 4]</span>
+<span class="sd">            object_poses (dict or None): dictionary mapping object name to object poses</span>
+<span class="sd">                of shape [..., 4, 4]</span>
+<span class="sd">            subtask_term_signals (dict or None): dictionary mapping subtask name to a binary </span>
+<span class="sd">                indicator (0 or 1) on whether subtask has been completed. Each value in the</span>
+<span class="sd">                dictionary could be an int, float, or np.array of shape [..., 1].</span>
+<span class="sd">            target_pose (np.array or None): target end effector poses of shape [..., 4, 4]</span>
+<span class="sd">            gripper_action (np.array or None): gripper actions of shape [..., D] where D</span>
+<span class="sd">                is the dimension of the gripper actuation action for the robot arm</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="selection-strategy">
+<h2>Selection Strategy<a class="headerlink" href="#selection-strategy" title="Permalink to this headline">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p><p>See Appendix N.3 in the MimicGen paper for a more thorough explanation of source subtask segment selection and some further intuition on when to use different settings.</p>
+</div><p>Each data generation attempt requires choosing one or more subtask segments from the source demonstrations to transform – this is carried out by a SelectionStrategy instance:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@six</span><span class="o">.</span><span class="n">add_metaclass</span><span class="p">(</span><span class="n">MG_SelectionStrategyMeta</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">MG_SelectionStrategy</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Defines methods and functions for selection strategies to implement.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@property</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">NAME</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This name (str) will be used to register the selection strategy class in the global</span>
+<span class="sd">        registry.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">def</span> <span class="nf">select_source_demo</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">eef_pose</span><span class="p">,</span>
+        <span class="n">object_pose</span><span class="p">,</span>
+        <span class="n">src_subtask_datagen_infos</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Selects source demonstration index using the current robot pose, relevant object pose</span>
+<span class="sd">        for the current subtask, and relevant information from the source demonstrations for the</span>
+<span class="sd">        current subtask.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            eef_pose (np.array): current 4x4 eef pose</span>
+<span class="sd">            object_pose (np.array): current 4x4 object pose, for the object in this subtask</span>
+<span class="sd">            src_subtask_datagen_infos (list): DatagenInfo instance for the relevant subtask segment</span>
+<span class="sd">                in the source demonstrations</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            source_demo_ind (int): index of source demonstration - indicates which source subtask segment to use</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+</pre></div>
+</div>
+<p>Every SelectionStrategy class must subclass this base class and implement the <code class="docutils literal notranslate"><span class="pre">NAME</span></code> and <code class="docutils literal notranslate"><span class="pre">select_source_demo</span></code> methods. The <code class="docutils literal notranslate"><span class="pre">NAME</span></code> field is used to register the SelectionStrategy class into the global registry, and <code class="docutils literal notranslate"><span class="pre">select_source_demo</span></code> implements the heuristic for selecting a source demonstration index.</p>
+<p>Each data generation config json specifies how source segment selection should be done during data generation. First, <code class="docutils literal notranslate"><span class="pre">config.experiment.generation.select_src_per_subtask</span></code> determines whether to select a different source demonstration for each subtask during data generation, or keep the same source demonstration as the one used for the first subtask. This corresponds to the <code class="docutils literal notranslate"><span class="pre">per-subtask</span></code> parameter described in the “Selection Frequency” paragraph of Appendix N.3 in the paper.</p>
+<p>The specific task config (<code class="docutils literal notranslate"><span class="pre">config.task.task_spec</span></code>), which corresponds to the <a class="reference external" href="https://mimicgen.github.io/docs/modules/task_spec.html">Task Spec</a> object used in data generation, also specifies the selection strategy to use for each subtask via the <code class="docutils literal notranslate"><span class="pre">selection_strategy</span></code> parameter and the <code class="docutils literal notranslate"><span class="pre">selection_strategy_kwargs</span></code> parameter. The <code class="docutils literal notranslate"><span class="pre">selection_strategy</span></code> parameter corresponds to the <code class="docutils literal notranslate"><span class="pre">NAME</span></code> for the SelectionStrategy class, and the <code class="docutils literal notranslate"><span class="pre">selection_strategy_kwargs</span></code> correspond to any additional kwargs to specify when invoking the <code class="docutils literal notranslate"><span class="pre">select_source_demo</span></code> method.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p><p>Note that if <code class="docutils literal notranslate"><span class="pre">config.experiment.generation.select_src_per_subtask</span></code> is False, only the first subtask’s selection strategy matters, since the selected source demonstration will be used for the remainder of the data generation attempt.</p>
+</div><p>As an example, the <code class="docutils literal notranslate"><span class="pre">NearestNeighborObjectStrategy</span></code> (see implementation below) can be specified by passing <code class="docutils literal notranslate"><span class="pre">nearest_neighbor_object</span></code> for the <code class="docutils literal notranslate"><span class="pre">selection_strategy</span></code> parameter and you can use the <code class="docutils literal notranslate"><span class="pre">selection_strategy_kwargs</span></code> parameter to specify a dictionary containing values for the <code class="docutils literal notranslate"><span class="pre">pos_weight</span></code>, <code class="docutils literal notranslate"><span class="pre">rot_weight</span></code>, and <code class="docutils literal notranslate"><span class="pre">nn_k</span></code> parameters.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NearestNeighborObjectStrategy</span><span class="p">(</span><span class="n">MG_SelectionStrategy</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Pick source demonstration to be the one with the closest object pose to the object </span>
+<span class="sd">    in the current scene.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># name for registering this class into registry</span>
+    <span class="n">NAME</span> <span class="o">=</span> <span class="s2">&quot;nearest_neighbor_object&quot;</span>
+
+    <span class="k">def</span> <span class="nf">select_source_demo</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">eef_pose</span><span class="p">,</span>
+        <span class="n">object_pose</span><span class="p">,</span>
+        <span class="n">src_subtask_datagen_infos</span><span class="p">,</span>
+        <span class="n">pos_weight</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span>
+        <span class="n">rot_weight</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span>
+        <span class="n">nn_k</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Selects source demonstration index using the current robot pose, relevant object pose</span>
+<span class="sd">        for the current subtask, and relevant information from the source demonstrations for the</span>
+<span class="sd">        current subtask.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            eef_pose (np.array): current 4x4 eef pose</span>
+<span class="sd">            object_pose (np.array): current 4x4 object pose, for the object in this subtask</span>
+<span class="sd">            src_subtask_datagen_infos (list): DatagenInfo instance for the relevant subtask segment</span>
+<span class="sd">                in the source demonstrations</span>
+<span class="sd">            pos_weight (float): weight on position for minimizing pose distance</span>
+<span class="sd">            rot_weight (float): weight on rotation for minimizing pose distance</span>
+<span class="sd">            nn_k (int): pick source demo index uniformly at randomly from the top @nn_k nearest neighbors</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            source_demo_ind (int): index of source demonstration - indicates which source subtask segment to use</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="waypoint">
+<h2>Waypoint<a class="headerlink" href="#waypoint" title="Permalink to this headline">#</a></h2>
+<section id="waypoint-class-variants">
+<h3>Waypoint Class Variants<a class="headerlink" href="#waypoint-class-variants" title="Permalink to this headline">#</a></h3>
+<p>MimicGen uses a collection of convenience classes to represent waypoints and trajectories (<code class="docutils literal notranslate"><span class="pre">datagen/waypoint.py</span></code>).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Waypoint</span></code> class represents a single 6-DoF target pose and the gripper action for that timestep:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Waypoint</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Represents a single desired 6-DoF waypoint, along with corresponding gripper actuation for this point.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pose</span><span class="p">,</span> <span class="n">gripper_action</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">WaypointSequence</span></code> class represents a sequence of these <code class="docutils literal notranslate"><span class="pre">Waypoint</span></code> objects:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">WaypointSequence</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Represents a sequence of Waypoint objects.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sequence</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>It can easily be instantiated from a collection of poses (e.g. <code class="docutils literal notranslate"><span class="pre">WaypointSequence.from_poses</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_poses</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">poses</span><span class="p">,</span> <span class="n">gripper_actions</span><span class="p">,</span> <span class="n">action_noise</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Instantiate a WaypointSequence object given a sequence of poses, </span>
+<span class="sd">        gripper actions, and action noise.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            poses (np.array): sequence of pose matrices of shape (T, 4, 4)</span>
+<span class="sd">            gripper_actions (np.array): sequence of gripper actions</span>
+<span class="sd">                that should be applied at each timestep of shape (T, D).</span>
+<span class="sd">            action_noise (float or np.array): sequence of action noise</span>
+<span class="sd">                magnitudes that should be applied at each timestep. If a </span>
+<span class="sd">                single float is provided, the noise magnitude will be</span>
+<span class="sd">                constant over the trajectory.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Finally, the <code class="docutils literal notranslate"><span class="pre">WaypointTrajectory</span></code> class is a sequence of the <code class="docutils literal notranslate"><span class="pre">WaypointSequence</span></code> objects, and is a convenient way to represent 6-DoF trajectories and execute them:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">WaypointTrajectory</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A sequence of WaypointSequence objects that corresponds to a full 6-DoF trajectory.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">WaypointSequence</span></code> objects can be added directly to a <code class="docutils literal notranslate"><span class="pre">WaypointTrajectory</span></code> object:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">add_waypoint_sequence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sequence</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Directly append sequence to list (no interpolation).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            sequence (WaypointSequence instance): sequence to add</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Interpolation segments can also be added easily using this helper method:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">add_waypoint_sequence_for_target_pose</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">pose</span><span class="p">,</span>
+        <span class="n">gripper_action</span><span class="p">,</span>
+        <span class="n">num_steps</span><span class="p">,</span>
+        <span class="n">skip_interpolation</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">action_noise</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds a new waypoint sequence corresponding to a desired target pose. A new WaypointSequence</span>
+<span class="sd">        will be constructed consisting of @num_steps intermediate Waypoint objects. These can either</span>
+<span class="sd">        be constructed with linear interpolation from the last waypoint (default) or be a</span>
+<span class="sd">        constant set of target poses (set @skip_interpolation to True).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            pose (np.array): 4x4 target pose</span>
+
+<span class="sd">            gripper_action (np.array): value for gripper action</span>
+
+<span class="sd">            num_steps (int): number of action steps when trying to reach this waypoint. Will</span>
+<span class="sd">                add intermediate linearly interpolated points between the last pose on this trajectory</span>
+<span class="sd">                and the target pose, so that the total number of steps is @num_steps.</span>
+
+<span class="sd">            skip_interpolation (bool): if True, keep the target pose fixed and repeat it @num_steps</span>
+<span class="sd">                times instead of using linearly interpolated targets.</span>
+
+<span class="sd">            action_noise (float): scale of random gaussian noise to add during action execution (e.g.</span>
+<span class="sd">                when @execute is called)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">merge</span></code> method is a thin wrapper around the above method, easily allowing for linear interpolation between two <code class="docutils literal notranslate"><span class="pre">WaypointTrajectory</span></code> objects:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">merge</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">other</span><span class="p">,</span>
+        <span class="n">num_steps_interp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">num_steps_fixed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">action_noise</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Merge this trajectory with another (@other).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            other (WaypointTrajectory object): the other trajectory to merge into this one</span>
+
+<span class="sd">            num_steps_interp (int or None): if not None, add a waypoint sequence that interpolates</span>
+<span class="sd">                between the end of the current trajectory and the start of @other</span>
+
+<span class="sd">            num_steps_fixed (int or None): if not None, add a waypoint sequence that has constant </span>
+<span class="sd">                target poses corresponding to the first target pose in @other</span>
+
+<span class="sd">            action_noise (float): noise to use during the interpolation segment</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Finally, the <code class="docutils literal notranslate"><span class="pre">execute</span></code> method makes it easy to execute the waypoint sequences in the simulation environment:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> 
+        <span class="n">env</span><span class="p">,</span>
+        <span class="n">env_interface</span><span class="p">,</span> 
+        <span class="n">render</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+        <span class="n">video_writer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+        <span class="n">video_skip</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> 
+        <span class="n">camera_names</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Main function to execute the trajectory. Will use env_interface.target_pose_to_action to</span>
+<span class="sd">        convert each target pose at each waypoint to an action command, and pass that along to</span>
+<span class="sd">        env.step.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            env (robomimic EnvBase instance): environment to use for executing trajectory</span>
+<span class="sd">            env_interface (MG_EnvInterface instance): environment interface for executing trajectory</span>
+<span class="sd">            render (bool): if True, render on-screen</span>
+<span class="sd">            video_writer (imageio writer): video writer</span>
+<span class="sd">            video_skip (int): determines rate at which environment frames are written to video</span>
+<span class="sd">            camera_names (list): determines which camera(s) are used for rendering. Pass more than</span>
+<span class="sd">                one to output a video with multiple camera views concatenated horizontally.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            results (dict): dictionary with the following items for the executed trajectory:</span>
+<span class="sd">                states (list): simulator state at each timestep</span>
+<span class="sd">                observations (list): observation dictionary at each timestep</span>
+<span class="sd">                datagen_infos (list): datagen_info at each timestep</span>
+<span class="sd">                actions (list): action executed at each timestep</span>
+<span class="sd">                success (bool): whether the trajectory successfully solved the task or not</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="waypoint-class-usage-during-data-generation">
+<h3>Waypoint Class Usage during Data Generation<a class="headerlink" href="#waypoint-class-usage-during-data-generation" title="Permalink to this headline">#</a></h3>
+<p>Each data generation attempt consists of executing a particular sequence of waypoints for each subtask. A <code class="docutils literal notranslate"><span class="pre">WaypointTrajectory</span></code> object is constructed and executed for each subtask in the <code class="docutils literal notranslate"><span class="pre">generate</span></code> method of the <code class="docutils literal notranslate"><span class="pre">DataGenerator</span></code>.</p>
+<p>For a given subtask, a <code class="docutils literal notranslate"><span class="pre">WaypointTrajectory</span></code> object is initialized with a single pose (usually the current robot end effector pose, or the last target pose from the previous subtask execution attempt). Next, a reference source subtask segment is selected, and then transformed using the <code class="docutils literal notranslate"><span class="pre">transform_source_data_segment_using_object_pose</span></code> method from <code class="docutils literal notranslate"><span class="pre">utils/pose_utils.py</span></code>. It is then merged into the trajectory object with linear interpolation using the <code class="docutils literal notranslate"><span class="pre">merge</span></code> method. Finally, the <code class="docutils literal notranslate"><span class="pre">execute</span></code> method is used to carry out the subtask. This process repeats for each subtask</p>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="overview.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Codebase Overview</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="task_spec.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Task Spec</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ajay Mandlekar<br/>
+  
+      &copy; Copyright 2023-2024, NVIDIA.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

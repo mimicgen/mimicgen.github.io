@@ -1,0 +1,1028 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>mimicgen.configs package &#8212; mimicgen 1.0 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
+    <script src="../static/jquery.js"></script>
+    <script src="../static/underscore.js"></script>
+    <script src="../static/doctools.js"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mimicgen.datagen package" href="mimicgen.datagen.html" />
+    <link rel="prev" title="mimicgen package" href="mimicgen.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../static/mimicgen_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">mimicgen 1.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/installation.html">
+   Installation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Datasets
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/mimicgen_corl_2023.html">
+   MimicGen (CoRL 2023)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
+   Reproducing Published Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/launching_several.html">
+   Launching Several Data Generation Runs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/datagen_custom.html">
+   Data Generation for Custom Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/task_visualizations.html">
+   Task Visualizations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/subtask_termination_signals.html">
+   Subtask Termination Signals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/debugging_datagen.html">
+   Debugging Data Generation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/overview.html">
+   Codebase Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/datagen.html">
+   Data Generation Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/task_spec.html">
+   Task Spec
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/env_interfaces.html">
+   Environment Interfaces
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/troubleshooting.html">
+   Troubleshooting and Known Issues
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Source API
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="mimicgen.html">
+   mimicgen package
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     mimicgen.configs package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mimicgen.datagen.html">
+     mimicgen.datagen package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mimicgen.env_interfaces.html">
+     mimicgen.env_interfaces package
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="mimicgen.envs.html">
+     mimicgen.envs package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="mimicgen.envs.robosuite.html">
+       mimicgen.envs.robosuite package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mimicgen.scripts.html">
+     mimicgen.scripts package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mimicgen.utils.html">
+     mimicgen.utils package
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../sources/api/mimicgen.configs.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.configs.config">
+   mimicgen.configs.config module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.configs.robosuite">
+   mimicgen.configs.robosuite module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.configs.task_spec">
+   mimicgen.configs.task_spec module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.configs">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>mimicgen.configs package</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.configs.config">
+   mimicgen.configs.config module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.configs.robosuite">
+   mimicgen.configs.robosuite module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.configs.task_spec">
+   mimicgen.configs.task_spec module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.configs">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="mimicgen-configs-package">
+<h1>mimicgen.configs package<a class="headerlink" href="#mimicgen-configs-package" title="Permalink to this headline">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="module-mimicgen.configs.config">
+<span id="mimicgen-configs-config-module"></span><h2>mimicgen.configs.config module<a class="headerlink" href="#module-mimicgen.configs.config" title="Permalink to this headline">#</a></h2>
+<p>Base MG_Config object for mimicgen data generation.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.configs.config.ConfigMeta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.configs.config.</span></span><span class="sig-name descname"><span class="pre">ConfigMeta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.config.ConfigMeta" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></p>
+<p>Define a metaclass for constructing a config class.
+It registers configs into the global registry.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.configs.config.MG_Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.configs.config.</span></span><span class="sig-name descname"><span class="pre">MG_Config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.config.MG_Config" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">robomimic.config.config.Config</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="mimicgen.configs.config.MG_Config.NAME">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NAME</span></span><a class="headerlink" href="#mimicgen.configs.config.MG_Config.NAME" title="Permalink to this definition">#</a></dt>
+<dd><p>classmethod(function) -&gt; method</p>
+<p>Convert a function to be a class method.</p>
+<p>A class method receives the class as implicit first argument,
+just like an instance method receives the instance.
+To declare a class method, use this idiom:</p>
+<blockquote>
+<div><dl>
+<dt>class C:</dt><dd><p>&#64;classmethod
+def f(cls, arg1, arg2, …):</p>
+<blockquote>
+<div><p>…</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+<p>It can be called either on the class (e.g. C.f()) or on an instance
+(e.g. C().f()).  The instance is ignored except for its class.
+If a class method is called for a derived class, the derived class
+object is passed as the implied first argument.</p>
+<p>Class methods are different than C++ or Java static methods.
+If you want those, see the staticmethod builtin.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mimicgen.configs.config.MG_Config.TYPE">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TYPE</span></span><a class="headerlink" href="#mimicgen.configs.config.MG_Config.TYPE" title="Permalink to this definition">#</a></dt>
+<dd><p>classmethod(function) -&gt; method</p>
+<p>Convert a function to be a class method.</p>
+<p>A class method receives the class as implicit first argument,
+just like an instance method receives the instance.
+To declare a class method, use this idiom:</p>
+<blockquote>
+<div><dl>
+<dt>class C:</dt><dd><p>&#64;classmethod
+def f(cls, arg1, arg2, …):</p>
+<blockquote>
+<div><p>…</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+<p>It can be called either on the class (e.g. C.f()) or on an instance
+(e.g. C().f()).  The instance is ignored except for its class.
+If a class method is called for a derived class, the derived class
+object is passed as the implied first argument.</p>
+<p>Class methods are different than C++ or Java static methods.
+If you want those, see the staticmethod builtin.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.configs.config.MG_Config.experiment_config">
+<span class="sig-name descname"><span class="pre">experiment_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.config.MG_Config.experiment_config" title="Permalink to this definition">#</a></dt>
+<dd><p>This function populates the <cite>config.experiment</cite> attribute of the config,
+which has general settings related to the dataset generation (e.g.
+which environment, robot, and gripper to use for generation, how many
+demonstrations to try collecting, etc).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.configs.config.MG_Config.obs_config">
+<span class="sig-name descname"><span class="pre">obs_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.config.MG_Config.obs_config" title="Permalink to this definition">#</a></dt>
+<dd><p>This function populates the <cite>config.obs</cite> attribute of the config, which has
+setings for which observations to collect during data generation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.configs.config.MG_Config.task_config">
+<span class="sig-name descname"><span class="pre">task_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.config.MG_Config.task_config" title="Permalink to this definition">#</a></dt>
+<dd><p>This function populates the <cite>config.task</cite> attribute of the config,
+which has settings for each object-centric subtask in a task.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.configs.config.config_factory">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.configs.config.</span></span><span class="sig-name descname"><span class="pre">config_factory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.config.config_factory" title="Permalink to this definition">#</a></dt>
+<dd><p>Creates an instance of a config from the algo name. Optionally pass
+a dictionary to instantiate the config from the dictionary.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.configs.config.get_all_registered_configs">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.configs.config.</span></span><span class="sig-name descname"><span class="pre">get_all_registered_configs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.config.get_all_registered_configs" title="Permalink to this definition">#</a></dt>
+<dd><p>Give access to dictionary of all registered configs for external use.</p>
+</dd></dl>
+
+</section>
+<section id="module-mimicgen.configs.robosuite">
+<span id="mimicgen-configs-robosuite-module"></span><h2>mimicgen.configs.robosuite module<a class="headerlink" href="#module-mimicgen.configs.robosuite" title="Permalink to this headline">#</a></h2>
+<p>Task configs for robosuite.</p>
+<p>See &#64;Coffee_Config below for an explanation of each parameter.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.CoffeePreparation_Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.configs.robosuite.</span></span><span class="sig-name descname"><span class="pre">CoffeePreparation_Config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.CoffeePreparation_Config" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mimicgen.configs.config.MG_Config" title="mimicgen.configs.config.MG_Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">mimicgen.configs.config.MG_Config</span></code></a></p>
+<p>Corresponds to robosuite CoffeePreparation task and variants.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.CoffeePreparation_Config.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'coffee_preparation'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.CoffeePreparation_Config.NAME" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.CoffeePreparation_Config.TYPE">
+<span class="sig-name descname"><span class="pre">TYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'robosuite'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.CoffeePreparation_Config.TYPE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.CoffeePreparation_Config.task_config">
+<span class="sig-name descname"><span class="pre">task_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.CoffeePreparation_Config.task_config" title="Permalink to this definition">#</a></dt>
+<dd><p>This function populates the <cite>config.task</cite> attribute of the config,
+which has settings for each object-centric subtask in a task. Each
+dictionary should have kwargs for the &#64;add_subtask method in the
+&#64;MG_TaskSpec object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Coffee_Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.configs.robosuite.</span></span><span class="sig-name descname"><span class="pre">Coffee_Config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.Coffee_Config" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mimicgen.configs.config.MG_Config" title="mimicgen.configs.config.MG_Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">mimicgen.configs.config.MG_Config</span></code></a></p>
+<p>Corresponds to robosuite Coffee task and variants.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Coffee_Config.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'coffee'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.Coffee_Config.NAME" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Coffee_Config.TYPE">
+<span class="sig-name descname"><span class="pre">TYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'robosuite'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.Coffee_Config.TYPE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Coffee_Config.task_config">
+<span class="sig-name descname"><span class="pre">task_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.Coffee_Config.task_config" title="Permalink to this definition">#</a></dt>
+<dd><p>This function populates the <cite>config.task</cite> attribute of the config,
+which has settings for each object-centric subtask in a task. Each
+dictionary should have kwargs for the &#64;add_subtask method in the
+&#64;MG_TaskSpec object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.HammerCleanup_Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.configs.robosuite.</span></span><span class="sig-name descname"><span class="pre">HammerCleanup_Config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.HammerCleanup_Config" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mimicgen.configs.config.MG_Config" title="mimicgen.configs.config.MG_Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">mimicgen.configs.config.MG_Config</span></code></a></p>
+<p>Corresponds to robosuite HammerCleanup task and variants.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.HammerCleanup_Config.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'hammer_cleanup'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.HammerCleanup_Config.NAME" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.HammerCleanup_Config.TYPE">
+<span class="sig-name descname"><span class="pre">TYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'robosuite'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.HammerCleanup_Config.TYPE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.HammerCleanup_Config.task_config">
+<span class="sig-name descname"><span class="pre">task_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.HammerCleanup_Config.task_config" title="Permalink to this definition">#</a></dt>
+<dd><p>This function populates the <cite>config.task</cite> attribute of the config,
+which has settings for each object-centric subtask in a task. Each
+dictionary should have kwargs for the &#64;add_subtask method in the
+&#64;MG_TaskSpec object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Kitchen_Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.configs.robosuite.</span></span><span class="sig-name descname"><span class="pre">Kitchen_Config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.Kitchen_Config" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mimicgen.configs.config.MG_Config" title="mimicgen.configs.config.MG_Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">mimicgen.configs.config.MG_Config</span></code></a></p>
+<p>Corresponds to robosuite Kitchen task and variants.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Kitchen_Config.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'kitchen'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.Kitchen_Config.NAME" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Kitchen_Config.TYPE">
+<span class="sig-name descname"><span class="pre">TYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'robosuite'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.Kitchen_Config.TYPE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Kitchen_Config.task_config">
+<span class="sig-name descname"><span class="pre">task_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.Kitchen_Config.task_config" title="Permalink to this definition">#</a></dt>
+<dd><p>This function populates the <cite>config.task</cite> attribute of the config,
+which has settings for each object-centric subtask in a task. Each
+dictionary should have kwargs for the &#64;add_subtask method in the
+&#64;MG_TaskSpec object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.MugCleanup_Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.configs.robosuite.</span></span><span class="sig-name descname"><span class="pre">MugCleanup_Config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.MugCleanup_Config" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mimicgen.configs.config.MG_Config" title="mimicgen.configs.config.MG_Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">mimicgen.configs.config.MG_Config</span></code></a></p>
+<p>Corresponds to robosuite MugCleanup task and variants.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.MugCleanup_Config.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'mug_cleanup'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.MugCleanup_Config.NAME" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.MugCleanup_Config.TYPE">
+<span class="sig-name descname"><span class="pre">TYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'robosuite'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.MugCleanup_Config.TYPE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.MugCleanup_Config.task_config">
+<span class="sig-name descname"><span class="pre">task_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.MugCleanup_Config.task_config" title="Permalink to this definition">#</a></dt>
+<dd><p>This function populates the <cite>config.task</cite> attribute of the config,
+which has settings for each object-centric subtask in a task. Each
+dictionary should have kwargs for the &#64;add_subtask method in the
+&#64;MG_TaskSpec object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.NutAssembly_Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.configs.robosuite.</span></span><span class="sig-name descname"><span class="pre">NutAssembly_Config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.NutAssembly_Config" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mimicgen.configs.config.MG_Config" title="mimicgen.configs.config.MG_Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">mimicgen.configs.config.MG_Config</span></code></a></p>
+<p>Corresponds to robosuite NutAssembly task and variants.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.NutAssembly_Config.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'nut_assembly'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.NutAssembly_Config.NAME" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.NutAssembly_Config.TYPE">
+<span class="sig-name descname"><span class="pre">TYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'robosuite'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.NutAssembly_Config.TYPE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.NutAssembly_Config.task_config">
+<span class="sig-name descname"><span class="pre">task_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.NutAssembly_Config.task_config" title="Permalink to this definition">#</a></dt>
+<dd><p>This function populates the <cite>config.task</cite> attribute of the config,
+which has settings for each object-centric subtask in a task. Each
+dictionary should have kwargs for the &#64;add_subtask method in the
+&#64;MG_TaskSpec object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.PickPlace_Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.configs.robosuite.</span></span><span class="sig-name descname"><span class="pre">PickPlace_Config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.PickPlace_Config" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mimicgen.configs.config.MG_Config" title="mimicgen.configs.config.MG_Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">mimicgen.configs.config.MG_Config</span></code></a></p>
+<p>Corresponds to robosuite PickPlace task and variants.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.PickPlace_Config.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'pick_place'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.PickPlace_Config.NAME" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.PickPlace_Config.TYPE">
+<span class="sig-name descname"><span class="pre">TYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'robosuite'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.PickPlace_Config.TYPE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.PickPlace_Config.task_config">
+<span class="sig-name descname"><span class="pre">task_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.PickPlace_Config.task_config" title="Permalink to this definition">#</a></dt>
+<dd><p>This function populates the <cite>config.task</cite> attribute of the config,
+which has settings for each object-centric subtask in a task. Each
+dictionary should have kwargs for the &#64;add_subtask method in the
+&#64;MG_TaskSpec object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Square_Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.configs.robosuite.</span></span><span class="sig-name descname"><span class="pre">Square_Config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.Square_Config" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mimicgen.configs.config.MG_Config" title="mimicgen.configs.config.MG_Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">mimicgen.configs.config.MG_Config</span></code></a></p>
+<p>Corresponds to robosuite Square task and variants.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Square_Config.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'square'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.Square_Config.NAME" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Square_Config.TYPE">
+<span class="sig-name descname"><span class="pre">TYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'robosuite'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.Square_Config.TYPE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Square_Config.task_config">
+<span class="sig-name descname"><span class="pre">task_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.Square_Config.task_config" title="Permalink to this definition">#</a></dt>
+<dd><p>This function populates the <cite>config.task</cite> attribute of the config,
+which has settings for each object-centric subtask in a task. Each
+dictionary should have kwargs for the &#64;add_subtask method in the
+&#64;MG_TaskSpec object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.StackThree_Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.configs.robosuite.</span></span><span class="sig-name descname"><span class="pre">StackThree_Config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.StackThree_Config" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mimicgen.configs.config.MG_Config" title="mimicgen.configs.config.MG_Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">mimicgen.configs.config.MG_Config</span></code></a></p>
+<p>Corresponds to robosuite StackThree task and variants.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.StackThree_Config.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'stack_three'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.StackThree_Config.NAME" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.StackThree_Config.TYPE">
+<span class="sig-name descname"><span class="pre">TYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'robosuite'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.StackThree_Config.TYPE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.StackThree_Config.task_config">
+<span class="sig-name descname"><span class="pre">task_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.StackThree_Config.task_config" title="Permalink to this definition">#</a></dt>
+<dd><p>This function populates the <cite>config.task</cite> attribute of the config,
+which has settings for each object-centric subtask in a task. Each
+dictionary should have kwargs for the &#64;add_subtask method in the
+&#64;MG_TaskSpec object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Stack_Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.configs.robosuite.</span></span><span class="sig-name descname"><span class="pre">Stack_Config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.Stack_Config" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mimicgen.configs.config.MG_Config" title="mimicgen.configs.config.MG_Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">mimicgen.configs.config.MG_Config</span></code></a></p>
+<p>Corresponds to robosuite Stack task and variants.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Stack_Config.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'stack'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.Stack_Config.NAME" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Stack_Config.TYPE">
+<span class="sig-name descname"><span class="pre">TYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'robosuite'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.Stack_Config.TYPE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Stack_Config.task_config">
+<span class="sig-name descname"><span class="pre">task_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.Stack_Config.task_config" title="Permalink to this definition">#</a></dt>
+<dd><p>This function populates the <cite>config.task</cite> attribute of the config,
+which has settings for each object-centric subtask in a task. Each
+dictionary should have kwargs for the &#64;add_subtask method in the
+&#64;MG_TaskSpec object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Threading_Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.configs.robosuite.</span></span><span class="sig-name descname"><span class="pre">Threading_Config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.Threading_Config" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mimicgen.configs.config.MG_Config" title="mimicgen.configs.config.MG_Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">mimicgen.configs.config.MG_Config</span></code></a></p>
+<p>Corresponds to robosuite Threading task and variants.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Threading_Config.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'threading'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.Threading_Config.NAME" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Threading_Config.TYPE">
+<span class="sig-name descname"><span class="pre">TYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'robosuite'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.Threading_Config.TYPE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.Threading_Config.task_config">
+<span class="sig-name descname"><span class="pre">task_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.Threading_Config.task_config" title="Permalink to this definition">#</a></dt>
+<dd><p>This function populates the <cite>config.task</cite> attribute of the config,
+which has settings for each object-centric subtask in a task. Each
+dictionary should have kwargs for the &#64;add_subtask method in the
+&#64;MG_TaskSpec object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.ThreePieceAssembly_Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.configs.robosuite.</span></span><span class="sig-name descname"><span class="pre">ThreePieceAssembly_Config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_to_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.ThreePieceAssembly_Config" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mimicgen.configs.config.MG_Config" title="mimicgen.configs.config.MG_Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">mimicgen.configs.config.MG_Config</span></code></a></p>
+<p>Corresponds to robosuite ThreePieceAssembly task and variants.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.ThreePieceAssembly_Config.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'three_piece_assembly'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.ThreePieceAssembly_Config.NAME" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.ThreePieceAssembly_Config.TYPE">
+<span class="sig-name descname"><span class="pre">TYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'robosuite'</span></em><a class="headerlink" href="#mimicgen.configs.robosuite.ThreePieceAssembly_Config.TYPE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.configs.robosuite.ThreePieceAssembly_Config.task_config">
+<span class="sig-name descname"><span class="pre">task_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.robosuite.ThreePieceAssembly_Config.task_config" title="Permalink to this definition">#</a></dt>
+<dd><p>This function populates the <cite>config.task</cite> attribute of the config,
+which has settings for each object-centric subtask in a task. Each
+dictionary should have kwargs for the &#64;add_subtask method in the
+&#64;MG_TaskSpec object.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mimicgen.configs.task_spec">
+<span id="mimicgen-configs-task-spec-module"></span><h2>mimicgen.configs.task_spec module<a class="headerlink" href="#module-mimicgen.configs.task_spec" title="Permalink to this headline">#</a></h2>
+<p>Defines task specification objects, which are used to store task-specific settings
+for data generation.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.configs.task_spec.MG_TaskSpec">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.configs.task_spec.</span></span><span class="sig-name descname"><span class="pre">MG_TaskSpec</span></span><a class="headerlink" href="#mimicgen.configs.task_spec.MG_TaskSpec" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Stores task-specific settings for data generation. Each task is a sequence of
+object-centric subtasks, and each subtask stores relevant settings used during
+the data generation process.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.configs.task_spec.MG_TaskSpec.add_subtask">
+<span class="sig-name descname"><span class="pre">add_subtask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtask_term_signal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtask_term_offset_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_strategy_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_noise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_interpolation_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_fixed_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_noise_during_interpolation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.task_spec.MG_TaskSpec.add_subtask" title="Permalink to this definition">#</a></dt>
+<dd><p>Add subtask to this task spec.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>object_ref</strong> (<em>str</em>) – each subtask involves manipulation with
+respect to a single object frame. This string should
+specify the object for this subtask. The name
+should be consistent with the “datagen_info” from the
+environment interface and dataset.</p></li>
+<li><p><strong>subtask_term_signal</strong> (<em>str</em><em> or </em><em>None</em>) – the “datagen_info” from the environment
+and dataset includes binary indicators for each subtask
+of the task at each timestep. This key should correspond
+to the key in “datagen_info” that should be used to
+infer when this subtask is finished (e.g. on a 0 to 1
+edge of the binary indicator). Should provide None for the final
+subtask.</p></li>
+<li><p><strong>subtask_term_offset_range</strong> (<em>2-tuple</em>) – if provided, specifies time offsets to
+be used during data generation when splitting a trajectory into
+subtask segments. On each data generation attempt, an offset is sampled
+and added to the boundary defined by &#64;subtask_term_signal.</p></li>
+<li><p><strong>selection_strategy</strong> (<em>str</em>) – specifies how the source subtask segment should be
+selected during data generation from the set of source human demos</p></li>
+<li><p><strong>selection_strategy_kwargs</strong> (<em>dict</em><em> or </em><em>None</em>) – optional keyword arguments for the selection
+strategy function used</p></li>
+<li><p><strong>action_noise</strong> (<em>float</em>) – amount of action noise to apply during this subtask</p></li>
+<li><p><strong>num_interpolation_steps</strong> (<em>int</em>) – number of interpolation steps to bridge previous subtask segment
+to this one</p></li>
+<li><p><strong>num_fixed_steps</strong> (<em>int</em>) – number of additional steps (with constant target pose of beginning of
+this subtask segment) to add to give the robot time to reach the pose needed to carry
+out this subtask segment</p></li>
+<li><p><strong>apply_noise_during_interpolation</strong> (<em>bool</em>) – if True, apply action noise during interpolation phase
+leading up to this subtask, as well as during the execution of this subtask</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.configs.task_spec.MG_TaskSpec.from_json">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.task_spec.MG_TaskSpec.from_json" title="Permalink to this definition">#</a></dt>
+<dd><p>Instantiate a TaskSpec object from a json string. This should
+be consistent with the output of &#64;serialize.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>json_string</strong> (<em>str</em>) – top-level of json has a key per subtask in-order (e.g.
+“subtask_1”, “subtask_2”, “subtask_3”) and under each subtask, there should
+be an entry for each argument of &#64;add_subtask</p></li>
+<li><p><strong>json_dict</strong> (<em>dict</em>) – optionally directly pass json dict</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.configs.task_spec.MG_TaskSpec.serialize">
+<span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.configs.task_spec.MG_TaskSpec.serialize" title="Permalink to this definition">#</a></dt>
+<dd><p>Return a json string corresponding to this task spec object. Compatible with
+&#64;from_json classmethod.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mimicgen.configs">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mimicgen.configs" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="mimicgen.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">mimicgen package</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="mimicgen.datagen.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">mimicgen.datagen package</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ajay Mandlekar<br/>
+  
+      &copy; Copyright 2023-2024, NVIDIA.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

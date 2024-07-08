@@ -1,0 +1,1028 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>mimicgen.datagen package &#8212; mimicgen 1.0 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
+    <script src="../static/jquery.js"></script>
+    <script src="../static/underscore.js"></script>
+    <script src="../static/doctools.js"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mimicgen.env_interfaces package" href="mimicgen.env_interfaces.html" />
+    <link rel="prev" title="mimicgen.configs package" href="mimicgen.configs.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../static/mimicgen_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">mimicgen 1.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/installation.html">
+   Installation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Datasets
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/mimicgen_corl_2023.html">
+   MimicGen (CoRL 2023)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/reproducing_experiments.html">
+   Reproducing Published Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/launching_several.html">
+   Launching Several Data Generation Runs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/datagen_custom.html">
+   Data Generation for Custom Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/task_visualizations.html">
+   Task Visualizations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/subtask_termination_signals.html">
+   Subtask Termination Signals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/debugging_datagen.html">
+   Debugging Data Generation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/overview.html">
+   Codebase Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/datagen.html">
+   Data Generation Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/task_spec.html">
+   Task Spec
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/env_interfaces.html">
+   Environment Interfaces
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/troubleshooting.html">
+   Troubleshooting and Known Issues
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Source API
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="mimicgen.html">
+   mimicgen package
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="mimicgen.configs.html">
+     mimicgen.configs package
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     mimicgen.datagen package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mimicgen.env_interfaces.html">
+     mimicgen.env_interfaces package
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="mimicgen.envs.html">
+     mimicgen.envs package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="mimicgen.envs.robosuite.html">
+       mimicgen.envs.robosuite package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mimicgen.scripts.html">
+     mimicgen.scripts package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mimicgen.utils.html">
+     mimicgen.utils package
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../sources/api/mimicgen.datagen.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.datagen.data_generator">
+   mimicgen.datagen.data_generator module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.datagen.datagen_info">
+   mimicgen.datagen.datagen_info module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.datagen.selection_strategy">
+   mimicgen.datagen.selection_strategy module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.datagen.waypoint">
+   mimicgen.datagen.waypoint module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.datagen">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>mimicgen.datagen package</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.datagen.data_generator">
+   mimicgen.datagen.data_generator module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.datagen.datagen_info">
+   mimicgen.datagen.datagen_info module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.datagen.selection_strategy">
+   mimicgen.datagen.selection_strategy module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.datagen.waypoint">
+   mimicgen.datagen.waypoint module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-mimicgen.datagen">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="mimicgen-datagen-package">
+<h1>mimicgen.datagen package<a class="headerlink" href="#mimicgen-datagen-package" title="Permalink to this headline">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="module-mimicgen.datagen.data_generator">
+<span id="mimicgen-datagen-data-generator-module"></span><h2>mimicgen.datagen.data_generator module<a class="headerlink" href="#module-mimicgen.datagen.data_generator" title="Permalink to this headline">#</a></h2>
+<p>Base class for data generator.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.datagen.data_generator.DataGenerator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.datagen.data_generator.</span></span><span class="sig-name descname"><span class="pre">DataGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_spec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">demo_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.data_generator.DataGenerator" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The main data generator object that loads a source dataset, parses it, and
+generates new trajectories.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.datagen.data_generator.DataGenerator.generate">
+<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_interface</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select_src_per_subtask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform_first_robot_pose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolate_from_last_target_pose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_writer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_skip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pause_subtask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.data_generator.DataGenerator.generate" title="Permalink to this definition">#</a></dt>
+<dd><p>Attempt to generate a new demonstration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>env</strong> (<em>robomimic EnvBase instance</em>) – environment to use for data collection</p></li>
+<li><p><strong>env_interface</strong> (<em>MG_EnvInterface instance</em>) – environment interface for some data generation operations</p></li>
+<li><p><strong>select_src_per_subtask</strong> (<em>bool</em>) – if True, select a different source demonstration for each subtask
+during data generation, else keep the same one for the entire episode</p></li>
+<li><p><strong>transform_first_robot_pose</strong> (<em>bool</em>) – if True, each subtask segment will consist of the first
+robot pose and the target poses instead of just the target poses. Can sometimes help
+improve data generation quality as the interpolation segment will interpolate to where
+the robot started in the source segment instead of the first target pose. Note that the
+first subtask segment of each episode will always include the first robot pose, regardless
+of this argument.</p></li>
+<li><p><strong>interpolate_from_last_target_pose</strong> (<em>bool</em>) – if True, each interpolation segment will start from
+the last target pose in the previous subtask segment, instead of the current robot pose. Can
+sometimes improve data generation quality.</p></li>
+<li><p><strong>render</strong> (<em>bool</em>) – if True, render on-screen</p></li>
+<li><p><strong>video_writer</strong> (<em>imageio writer</em>) – video writer</p></li>
+<li><p><strong>video_skip</strong> (<em>int</em>) – determines rate at which environment frames are written to video</p></li>
+<li><p><strong>camera_names</strong> (<em>list</em>) – determines which camera(s) are used for rendering. Pass more than
+one to output a video with multiple camera views concatenated horizontally.</p></li>
+<li><p><strong>pause_subtask</strong> (<em>bool</em>) – if True, pause after every subtask during generation, for
+debugging.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>dictionary with the following items:</dt><dd><p>initial_state (dict): initial simulator state for the executed trajectory
+states (list): simulator state at each timestep
+observations (list): observation dictionary at each timestep
+datagen_infos (list): datagen_info at each timestep
+actions (np.array): action executed at each timestep
+success (bool): whether the trajectory successfully solved the task or not
+src_demo_inds (list): list of selected source demonstration indices for each subtask
+src_demo_labels (np.array): same as &#64;src_demo_inds, but repeated to have a label for each timestep of the trajectory</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>results (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.datagen.data_generator.DataGenerator.randomize_subtask_boundaries">
+<span class="sig-name descname"><span class="pre">randomize_subtask_boundaries</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.data_generator.DataGenerator.randomize_subtask_boundaries" title="Permalink to this definition">#</a></dt>
+<dd><p>Apply random offsets to sample subtask boundaries according to the task spec.
+Recall that each demonstration is segmented into a set of subtask segments, and the
+end index of each subtask can have a random offset.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.datagen.data_generator.DataGenerator.select_source_demo">
+<span class="sig-name descname"><span class="pre">select_source_demo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eef_pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtask_ind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_subtask_inds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtask_object_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_strategy_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_strategy_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.data_generator.DataGenerator.select_source_demo" title="Permalink to this definition">#</a></dt>
+<dd><p>Helper method to run source subtask segment selection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eef_pose</strong> (<em>np.array</em>) – current end effector pose</p></li>
+<li><p><strong>object_pose</strong> (<em>np.array</em>) – current object pose for this subtask</p></li>
+<li><p><strong>subtask_ind</strong> (<em>int</em>) – index of subtask</p></li>
+<li><p><strong>src_subtask_inds</strong> (<em>np.array</em>) – start and end indices for subtask segment in source demonstrations of shape (N, 2)</p></li>
+<li><p><strong>subtask_object_name</strong> (<em>str</em>) – name of reference object for this subtask</p></li>
+<li><p><strong>selection_strategy_name</strong> (<em>str</em>) – name of selection strategy</p></li>
+<li><p><strong>selection_strategy_kwargs</strong> (<em>dict</em>) – extra kwargs for running selection strategy</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>selected source demo index</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>selected_src_demo_ind (int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mimicgen.datagen.datagen_info">
+<span id="mimicgen-datagen-datagen-info-module"></span><h2>mimicgen.datagen.datagen_info module<a class="headerlink" href="#module-mimicgen.datagen.datagen_info" title="Permalink to this headline">#</a></h2>
+<p>Defines structure of information that is needed from an environment for data generation.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.datagen.datagen_info.DatagenInfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.datagen.datagen_info.</span></span><span class="sig-name descname"><span class="pre">DatagenInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eef_pose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_poses</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtask_term_signals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_pose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gripper_action</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.datagen_info.DatagenInfo" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Structure of information needed from an environment for data generation. To allow for
+flexibility, not all information must be present.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.datagen.datagen_info.DatagenInfo.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.datagen_info.DatagenInfo.to_dict" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert this instance to a dictionary containing the same information.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mimicgen.datagen.selection_strategy">
+<span id="mimicgen-datagen-selection-strategy-module"></span><h2>mimicgen.datagen.selection_strategy module<a class="headerlink" href="#module-mimicgen.datagen.selection_strategy" title="Permalink to this headline">#</a></h2>
+<p>Selection strategies used by MimicGen to select subtask segments from
+source human demonstrations.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.datagen.selection_strategy.MG_SelectionStrategy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.datagen.selection_strategy.</span></span><span class="sig-name descname"><span class="pre">MG_SelectionStrategy</span></span><a class="headerlink" href="#mimicgen.datagen.selection_strategy.MG_SelectionStrategy" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Defines methods and functions for selection strategies to implement.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="mimicgen.datagen.selection_strategy.MG_SelectionStrategy.NAME">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NAME</span></span><a class="headerlink" href="#mimicgen.datagen.selection_strategy.MG_SelectionStrategy.NAME" title="Permalink to this definition">#</a></dt>
+<dd><p>classmethod(function) -&gt; method</p>
+<p>Convert a function to be a class method.</p>
+<p>A class method receives the class as implicit first argument,
+just like an instance method receives the instance.
+To declare a class method, use this idiom:</p>
+<blockquote>
+<div><dl>
+<dt>class C:</dt><dd><p>&#64;classmethod
+def f(cls, arg1, arg2, …):</p>
+<blockquote>
+<div><p>…</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+<p>It can be called either on the class (e.g. C.f()) or on an instance
+(e.g. C().f()).  The instance is ignored except for its class.
+If a class method is called for a derived class, the derived class
+object is passed as the implied first argument.</p>
+<p>Class methods are different than C++ or Java static methods.
+If you want those, see the staticmethod builtin.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.datagen.selection_strategy.MG_SelectionStrategy.select_source_demo">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">select_source_demo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eef_pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_subtask_datagen_infos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.selection_strategy.MG_SelectionStrategy.select_source_demo" title="Permalink to this definition">#</a></dt>
+<dd><p>Selects source demonstration index using the current robot pose, relevant object pose
+for the current subtask, and relevant information from the source demonstrations for the
+current subtask.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eef_pose</strong> (<em>np.array</em>) – current 4x4 eef pose</p></li>
+<li><p><strong>object_pose</strong> (<em>np.array</em>) – current 4x4 object pose, for the object in this subtask</p></li>
+<li><p><strong>src_subtask_datagen_infos</strong> (<em>list</em>) – DatagenInfo instance for the relevant subtask segment
+in the source demonstrations</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>index of source demonstration - indicates which source subtask segment to use</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>source_demo_ind (int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.datagen.selection_strategy.MG_SelectionStrategyMeta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.datagen.selection_strategy.</span></span><span class="sig-name descname"><span class="pre">MG_SelectionStrategyMeta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.selection_strategy.MG_SelectionStrategyMeta" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></p>
+<p>This metaclass adds selection strategy classes into the global registry.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.datagen.selection_strategy.NearestNeighborObjectStrategy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.datagen.selection_strategy.</span></span><span class="sig-name descname"><span class="pre">NearestNeighborObjectStrategy</span></span><a class="headerlink" href="#mimicgen.datagen.selection_strategy.NearestNeighborObjectStrategy" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mimicgen.datagen.selection_strategy.MG_SelectionStrategy" title="mimicgen.datagen.selection_strategy.MG_SelectionStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">mimicgen.datagen.selection_strategy.MG_SelectionStrategy</span></code></a></p>
+<p>Pick source demonstration to be the one with the closest object pose to the object
+in the current scene.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.datagen.selection_strategy.NearestNeighborObjectStrategy.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'nearest_neighbor_object'</span></em><a class="headerlink" href="#mimicgen.datagen.selection_strategy.NearestNeighborObjectStrategy.NAME" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.datagen.selection_strategy.NearestNeighborObjectStrategy.select_source_demo">
+<span class="sig-name descname"><span class="pre">select_source_demo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eef_pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_subtask_datagen_infos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nn_k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.selection_strategy.NearestNeighborObjectStrategy.select_source_demo" title="Permalink to this definition">#</a></dt>
+<dd><p>Selects source demonstration index using the current robot pose, relevant object pose
+for the current subtask, and relevant information from the source demonstrations for the
+current subtask.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eef_pose</strong> (<em>np.array</em>) – current 4x4 eef pose</p></li>
+<li><p><strong>object_pose</strong> (<em>np.array</em>) – current 4x4 object pose, for the object in this subtask</p></li>
+<li><p><strong>src_subtask_datagen_infos</strong> (<em>list</em>) – DatagenInfo instance for the relevant subtask segment
+in the source demonstrations</p></li>
+<li><p><strong>pos_weight</strong> (<em>float</em>) – weight on position for minimizing pose distance</p></li>
+<li><p><strong>rot_weight</strong> (<em>float</em>) – weight on rotation for minimizing pose distance</p></li>
+<li><p><strong>nn_k</strong> (<em>int</em>) – pick source demo index uniformly at randomly from the top &#64;nn_k nearest neighbors</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>index of source demonstration - indicates which source subtask segment to use</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>source_demo_ind (int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.datagen.selection_strategy.NearestNeighborRobotDistanceStrategy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.datagen.selection_strategy.</span></span><span class="sig-name descname"><span class="pre">NearestNeighborRobotDistanceStrategy</span></span><a class="headerlink" href="#mimicgen.datagen.selection_strategy.NearestNeighborRobotDistanceStrategy" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mimicgen.datagen.selection_strategy.MG_SelectionStrategy" title="mimicgen.datagen.selection_strategy.MG_SelectionStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">mimicgen.datagen.selection_strategy.MG_SelectionStrategy</span></code></a></p>
+<p>Pick source demonstration to be the one that minimizes the distance the robot
+end effector will need to travel from the current pose to the first pose
+in the transformed segment.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.datagen.selection_strategy.NearestNeighborRobotDistanceStrategy.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'nearest_neighbor_robot_distance'</span></em><a class="headerlink" href="#mimicgen.datagen.selection_strategy.NearestNeighborRobotDistanceStrategy.NAME" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.datagen.selection_strategy.NearestNeighborRobotDistanceStrategy.select_source_demo">
+<span class="sig-name descname"><span class="pre">select_source_demo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eef_pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_subtask_datagen_infos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nn_k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.selection_strategy.NearestNeighborRobotDistanceStrategy.select_source_demo" title="Permalink to this definition">#</a></dt>
+<dd><p>Selects source demonstration index using the current robot pose, relevant object pose
+for the current subtask, and relevant information from the source demonstrations for the
+current subtask.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eef_pose</strong> (<em>np.array</em>) – current 4x4 eef pose</p></li>
+<li><p><strong>object_pose</strong> (<em>np.array</em>) – current 4x4 object pose, for the object in this subtask</p></li>
+<li><p><strong>src_subtask_datagen_infos</strong> (<em>list</em>) – DatagenInfo instance for the relevant subtask segment
+in the source demonstrations</p></li>
+<li><p><strong>pos_weight</strong> (<em>float</em>) – weight on position for minimizing pose distance</p></li>
+<li><p><strong>rot_weight</strong> (<em>float</em>) – weight on rotation for minimizing pose distance</p></li>
+<li><p><strong>nn_k</strong> (<em>int</em>) – pick source demo index uniformly at randomly from the top &#64;nn_k nearest neighbors</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>index of source demonstration - indicates which source subtask segment to use</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>source_demo_ind (int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.datagen.selection_strategy.RandomStrategy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.datagen.selection_strategy.</span></span><span class="sig-name descname"><span class="pre">RandomStrategy</span></span><a class="headerlink" href="#mimicgen.datagen.selection_strategy.RandomStrategy" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mimicgen.datagen.selection_strategy.MG_SelectionStrategy" title="mimicgen.datagen.selection_strategy.MG_SelectionStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">mimicgen.datagen.selection_strategy.MG_SelectionStrategy</span></code></a></p>
+<p>Pick source demonstration randomly.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mimicgen.datagen.selection_strategy.RandomStrategy.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'random'</span></em><a class="headerlink" href="#mimicgen.datagen.selection_strategy.RandomStrategy.NAME" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.datagen.selection_strategy.RandomStrategy.select_source_demo">
+<span class="sig-name descname"><span class="pre">select_source_demo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eef_pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_subtask_datagen_infos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.selection_strategy.RandomStrategy.select_source_demo" title="Permalink to this definition">#</a></dt>
+<dd><p>Selects source demonstration index using the current robot pose, relevant object pose
+for the current subtask, and relevant information from the source demonstrations for the
+current subtask.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eef_pose</strong> (<em>np.array</em>) – current 4x4 eef pose</p></li>
+<li><p><strong>object_pose</strong> (<em>np.array</em>) – current 4x4 object pose, for the object in this subtask</p></li>
+<li><p><strong>src_subtask_datagen_infos</strong> (<em>list</em>) – DatagenInfo instance for the relevant subtask segment
+in the source demonstrations</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>index of source demonstration - indicates which source subtask segment to use</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>source_demo_ind (int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.datagen.selection_strategy.assert_selection_strategy_exists">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.datagen.selection_strategy.</span></span><span class="sig-name descname"><span class="pre">assert_selection_strategy_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.selection_strategy.assert_selection_strategy_exists" title="Permalink to this definition">#</a></dt>
+<dd><p>Allow easy way to check if selection strategy exists.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.datagen.selection_strategy.make_selection_strategy">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.datagen.selection_strategy.</span></span><span class="sig-name descname"><span class="pre">make_selection_strategy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.selection_strategy.make_selection_strategy" title="Permalink to this definition">#</a></dt>
+<dd><p>Creates an instance of a selection strategy class, specified by &#64;name,
+which is used to look it up in the registry.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.datagen.selection_strategy.register_selection_strategy">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.datagen.selection_strategy.</span></span><span class="sig-name descname"><span class="pre">register_selection_strategy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.selection_strategy.register_selection_strategy" title="Permalink to this definition">#</a></dt>
+<dd><p>Register selection strategy class into global registry.</p>
+</dd></dl>
+
+</section>
+<section id="module-mimicgen.datagen.waypoint">
+<span id="mimicgen-datagen-waypoint-module"></span><h2>mimicgen.datagen.waypoint module<a class="headerlink" href="#module-mimicgen.datagen.waypoint" title="Permalink to this headline">#</a></h2>
+<p>A collection of classes used to represent waypoints and trajectories.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.datagen.waypoint.Waypoint">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.datagen.waypoint.</span></span><span class="sig-name descname"><span class="pre">Waypoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gripper_action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.waypoint.Waypoint" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a single desired 6-DoF waypoint, along with corresponding gripper actuation for this point.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.datagen.waypoint.WaypointSequence">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.datagen.waypoint.</span></span><span class="sig-name descname"><span class="pre">WaypointSequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.waypoint.WaypointSequence" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a sequence of Waypoint objects.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.datagen.waypoint.WaypointSequence.from_poses">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_poses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">poses</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gripper_actions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_noise</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.waypoint.WaypointSequence.from_poses" title="Permalink to this definition">#</a></dt>
+<dd><p>Instantiate a WaypointSequence object given a sequence of poses,
+gripper actions, and action noise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>poses</strong> (<em>np.array</em>) – sequence of pose matrices of shape (T, 4, 4)</p></li>
+<li><p><strong>gripper_actions</strong> (<em>np.array</em>) – sequence of gripper actions
+that should be applied at each timestep of shape (T, D).</p></li>
+<li><p><strong>action_noise</strong> (<em>float</em><em> or </em><em>np.array</em>) – sequence of action noise
+magnitudes that should be applied at each timestep. If a
+single float is provided, the noise magnitude will be
+constant over the trajectory.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mimicgen.datagen.waypoint.WaypointSequence.last_waypoint">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">last_waypoint</span></span><a class="headerlink" href="#mimicgen.datagen.waypoint.WaypointSequence.last_waypoint" title="Permalink to this definition">#</a></dt>
+<dd><p>Return last waypoint in sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>waypoint (Waypoint instance)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.datagen.waypoint.WaypointSequence.split">
+<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.waypoint.WaypointSequence.split" title="Permalink to this definition">#</a></dt>
+<dd><p>Splits this sequence into 2 pieces, the part up to time index &#64;ind, and the
+rest. Returns 2 WaypointSequence objects.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mimicgen.datagen.waypoint.WaypointTrajectory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mimicgen.datagen.waypoint.</span></span><span class="sig-name descname"><span class="pre">WaypointTrajectory</span></span><a class="headerlink" href="#mimicgen.datagen.waypoint.WaypointTrajectory" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A sequence of WaypointSequence objects that corresponds to a full 6-DoF trajectory.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.datagen.waypoint.WaypointTrajectory.add_waypoint_sequence">
+<span class="sig-name descname"><span class="pre">add_waypoint_sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.waypoint.WaypointTrajectory.add_waypoint_sequence" title="Permalink to this definition">#</a></dt>
+<dd><p>Directly append sequence to list (no interpolation).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sequence</strong> (<em>WaypointSequence instance</em>) – sequence to add</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.datagen.waypoint.WaypointTrajectory.add_waypoint_sequence_for_target_pose">
+<span class="sig-name descname"><span class="pre">add_waypoint_sequence_for_target_pose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gripper_action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_interpolation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_noise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.waypoint.WaypointTrajectory.add_waypoint_sequence_for_target_pose" title="Permalink to this definition">#</a></dt>
+<dd><p>Adds a new waypoint sequence corresponding to a desired target pose. A new WaypointSequence
+will be constructed consisting of &#64;num_steps intermediate Waypoint objects. These can either
+be constructed with linear interpolation from the last waypoint (default) or be a
+constant set of target poses (set &#64;skip_interpolation to True).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pose</strong> (<em>np.array</em>) – 4x4 target pose</p></li>
+<li><p><strong>gripper_action</strong> (<em>np.array</em>) – value for gripper action</p></li>
+<li><p><strong>num_steps</strong> (<em>int</em>) – number of action steps when trying to reach this waypoint. Will
+add intermediate linearly interpolated points between the last pose on this trajectory
+and the target pose, so that the total number of steps is &#64;num_steps.</p></li>
+<li><p><strong>skip_interpolation</strong> (<em>bool</em>) – if True, keep the target pose fixed and repeat it &#64;num_steps
+times instead of using linearly interpolated targets.</p></li>
+<li><p><strong>action_noise</strong> (<em>float</em>) – scale of random gaussian noise to add during action execution (e.g.
+when &#64;execute is called)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.datagen.waypoint.WaypointTrajectory.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_interface</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_writer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_skip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.waypoint.WaypointTrajectory.execute" title="Permalink to this definition">#</a></dt>
+<dd><p>Main function to execute the trajectory. Will use env_interface.target_pose_to_action to
+convert each target pose at each waypoint to an action command, and pass that along to
+env.step.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>env</strong> (<em>robomimic EnvBase instance</em>) – environment to use for executing trajectory</p></li>
+<li><p><strong>env_interface</strong> (<em>MG_EnvInterface instance</em>) – environment interface for executing trajectory</p></li>
+<li><p><strong>render</strong> (<em>bool</em>) – if True, render on-screen</p></li>
+<li><p><strong>video_writer</strong> (<em>imageio writer</em>) – video writer</p></li>
+<li><p><strong>video_skip</strong> (<em>int</em>) – determines rate at which environment frames are written to video</p></li>
+<li><p><strong>camera_names</strong> (<em>list</em>) – determines which camera(s) are used for rendering. Pass more than
+one to output a video with multiple camera views concatenated horizontally.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>dictionary with the following items for the executed trajectory:</dt><dd><p>states (list): simulator state at each timestep
+observations (list): observation dictionary at each timestep
+datagen_infos (list): datagen_info at each timestep
+actions (list): action executed at each timestep
+success (bool): whether the trajectory successfully solved the task or not</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>results (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mimicgen.datagen.waypoint.WaypointTrajectory.last_waypoint">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">last_waypoint</span></span><a class="headerlink" href="#mimicgen.datagen.waypoint.WaypointTrajectory.last_waypoint" title="Permalink to this definition">#</a></dt>
+<dd><p>Return last waypoint in sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>waypoint (Waypoint instance)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.datagen.waypoint.WaypointTrajectory.merge">
+<span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_steps_interp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_steps_fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_noise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.waypoint.WaypointTrajectory.merge" title="Permalink to this definition">#</a></dt>
+<dd><p>Merge this trajectory with another (&#64;other).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> (<em>WaypointTrajectory object</em>) – the other trajectory to merge into this one</p></li>
+<li><p><strong>num_steps_interp</strong> (<em>int</em><em> or </em><em>None</em>) – if not None, add a waypoint sequence that interpolates
+between the end of the current trajectory and the start of &#64;other</p></li>
+<li><p><strong>num_steps_fixed</strong> (<em>int</em><em> or </em><em>None</em>) – if not None, add a waypoint sequence that has constant
+target poses corresponding to the first target pose in &#64;other</p></li>
+<li><p><strong>action_noise</strong> (<em>float</em>) – noise to use during the interpolation segment</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mimicgen.datagen.waypoint.WaypointTrajectory.pop_first">
+<span class="sig-name descname"><span class="pre">pop_first</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.datagen.waypoint.WaypointTrajectory.pop_first" title="Permalink to this definition">#</a></dt>
+<dd><p>Removes first waypoint in first waypoint sequence and returns it. If the first waypoint
+sequence is now empty, it is also removed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>waypoint (Waypoint instance)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mimicgen.datagen">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mimicgen.datagen" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="mimicgen.configs.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">mimicgen.configs package</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="mimicgen.env_interfaces.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">mimicgen.env_interfaces package</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ajay Mandlekar<br/>
+  
+      &copy; Copyright 2023-2024, NVIDIA.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

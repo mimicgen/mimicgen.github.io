@@ -1,0 +1,580 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Debugging Data Generation &#8212; mimicgen 1.0 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../static/pygments.css" />
+    <link rel="stylesheet" href="../static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js"></script>
+    <script src="../static/jquery.js"></script>
+    <script src="../static/underscore.js"></script>
+    <script src="../static/doctools.js"></script>
+    <script src="../static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Codebase Overview" href="../modules/overview.html" />
+    <link rel="prev" title="Subtask Termination Signals" href="subtask_termination_signals.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../static/mimicgen_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">mimicgen 1.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/installation.html">
+   Installation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Datasets
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets/mimicgen_corl_2023.html">
+   MimicGen (CoRL 2023)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reproducing_experiments.html">
+   Reproducing Published Experiments and Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="launching_several.html">
+   Launching Several Data Generation Runs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="datagen_custom.html">
+   Data Generation for Custom Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="task_visualizations.html">
+   Task Visualizations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="subtask_termination_signals.html">
+   Subtask Termination Signals
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Debugging Data Generation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/overview.html">
+   Codebase Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/datagen.html">
+   Data Generation Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/task_spec.html">
+   Task Spec
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/env_interfaces.html">
+   Environment Interfaces
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Miscellaneous
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../miscellaneous/troubleshooting.html">
+   Troubleshooting and Known Issues
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Source API
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api/mimicgen.html">
+   mimicgen package
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.configs.html">
+     mimicgen.configs package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.datagen.html">
+     mimicgen.datagen package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.env_interfaces.html">
+     mimicgen.env_interfaces package
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../api/mimicgen.envs.html">
+     mimicgen.envs package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../api/mimicgen.envs.robosuite.html">
+       mimicgen.envs.robosuite package
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.scripts.html">
+     mimicgen.scripts package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../api/mimicgen.utils.html">
+     mimicgen.utils package
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../sources/tutorials/debugging_datagen.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#source-demo-validation">
+   Source Demo Validation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-source-dataset-information">
+     Get Source Dataset Information
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-subtasks-in-source-dataset">
+     Visualizing Subtasks in Source Dataset
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualization-during-data-generation">
+   Visualization during Data Generation
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Debugging Data Generation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#source-demo-validation">
+   Source Demo Validation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-source-dataset-information">
+     Get Source Dataset Information
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-subtasks-in-source-dataset">
+     Visualizing Subtasks in Source Dataset
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualization-during-data-generation">
+   Visualization during Data Generation
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="debugging-data-generation">
+<h1>Debugging Data Generation<a class="headerlink" href="#debugging-data-generation" title="Permalink to this headline">#</a></h1>
+<p>We provide some useful suggestions for debugging data generation runs.</p>
+<section id="source-demo-validation">
+<h2>Source Demo Validation<a class="headerlink" href="#source-demo-validation" title="Permalink to this headline">#</a></h2>
+<section id="get-source-dataset-information">
+<h3>Get Source Dataset Information<a class="headerlink" href="#get-source-dataset-information" title="Permalink to this headline">#</a></h3>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">get_source_info.py</span></code> script to validate whether the source demonstrations you are using have the expected <a class="reference external" href="https://mimicgen.github.io/docs/modules/datagen.html#datagen-info">DatagenInfo</a> structure, and are using the correct <a class="reference external" href="https://mimicgen.github.io/docs/modules/env_interfaces.html">Environment Interface</a>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>mimicgen/scripts/get_source_info.py<span class="w"> </span>--dataset<span class="w"> </span>datasets/source/square.hdf5
+</pre></div>
+</div>
+<p>It will print out information that looks like the following. This is a good way to also validate the object poses and subtask termination signals present in the file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Environment</span> <span class="n">Interface</span><span class="p">:</span> <span class="n">MG_Square</span>
+<span class="n">Environment</span> <span class="n">Interface</span> <span class="n">Type</span><span class="p">:</span> <span class="n">robosuite</span>
+
+<span class="n">Structure</span> <span class="n">of</span> <span class="n">datagen_info</span> <span class="ow">in</span> <span class="n">episode</span> <span class="n">demo_0</span><span class="p">:</span>
+  <span class="n">eef_pose</span><span class="p">:</span> <span class="n">shape</span> <span class="p">(</span><span class="mi">127</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+  <span class="n">gripper_action</span><span class="p">:</span> <span class="n">shape</span> <span class="p">(</span><span class="mi">127</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="n">object_poses</span><span class="p">:</span>
+    <span class="n">square_nut</span><span class="p">:</span> <span class="n">shape</span> <span class="p">(</span><span class="mi">127</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">square_peg</span><span class="p">:</span> <span class="n">shape</span> <span class="p">(</span><span class="mi">127</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+  <span class="n">subtask_term_signals</span><span class="p">:</span>
+    <span class="n">grasp</span><span class="p">:</span> <span class="n">shape</span> <span class="p">(</span><span class="mi">127</span><span class="p">,)</span>
+  <span class="n">target_pose</span><span class="p">:</span> <span class="n">shape</span> <span class="p">(</span><span class="mi">127</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="visualizing-subtasks-in-source-dataset">
+<h3>Visualizing Subtasks in Source Dataset<a class="headerlink" href="#visualizing-subtasks-in-source-dataset" title="Permalink to this headline">#</a></h3>
+<p>You can visualize each subtask segment in a source demonstration using the <code class="docutils literal notranslate"><span class="pre">visualize_subtasks.py</span></code> script.</p>
+<p>The script needs to be aware of the order of the subtask signals as well as the maximum termination offsets being used (see the <a class="reference external" href="https://mimicgen.github.io/docs/tutorials/subtask_termination_signals.html">Subtask Termination Signals</a>) page for more information on offsets) – this can be specified by providing a config json (<code class="docutils literal notranslate"><span class="pre">--config</span></code>) or by providing the sequence of signals (<code class="docutils literal notranslate"><span class="pre">--signals</span></code>) and offsets (<code class="docutils literal notranslate"><span class="pre">--offsets</span></code>) for all except the last subtask. The end of each subtask is defined as the timestep of the first 0 to 1 transition in the corresponding signal added to the maximum offset value.</p>
+<p>The script supports either on-screen rendering (<code class="docutils literal notranslate"><span class="pre">--render</span></code>) or off-screen rendering to a video (<code class="docutils literal notranslate"><span class="pre">--video_path</span></code>). If using on-screen rendering, the script will pause after every subtask segment. If using off-screen rendering, the video alternates between no borders and red borders to show each subtask segment.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># render on-screen</span>
+$<span class="w"> </span>python<span class="w"> </span>visualize_subtasks.py<span class="w"> </span>--dataset<span class="w"> </span>/path/to/demo.hdf5<span class="w"> </span>--config<span class="w"> </span>/path/to/config.json<span class="w"> </span>--render
+
+<span class="c1"># render to video</span>
+$<span class="w"> </span>python<span class="w"> </span>visualize_subtasks.py<span class="w"> </span>--dataset<span class="w"> </span>/path/to/demo.hdf5<span class="w"> </span>--config<span class="w"> </span>/path/to/config.json<span class="w"> </span>--video_path<span class="w"> </span>/path/to/video.mp4
+
+<span class="c1"># specify subtask information manually instead of using a config</span>
+$<span class="w"> </span>python<span class="w"> </span>visualize_subtasks.py<span class="w"> </span>--dataset<span class="w"> </span>/path/to/demo.hdf5<span class="w"> </span>--signals<span class="w"> </span>grasp_1<span class="w"> </span>insert_1<span class="w"> </span>grasp_2<span class="w"> </span>--offsets<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">10</span><span class="w"> </span>--render
+</pre></div>
+</div>
+<p>The script is useful to tune the <a class="reference external" href="https://mimicgen.github.io/docs/tutorials/subtask_termination_signals.html">Subtask Termination Signals</a> specified through the environment interface (the <code class="docutils literal notranslate"><span class="pre">get_subtask_term_signals</span></code> method) or the manual annotations provided through <code class="docutils literal notranslate"><span class="pre">scripts/annotate_subtasks.py</span></code> have defined that subtask segments properly, as well as the offsets you are using in the data generation config.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p><p>When you change the <code class="docutils literal notranslate"><span class="pre">get_subtask_term_signals</span></code> method, you should re-run the <code class="docutils literal notranslate"><span class="pre">prepare_src_dataset.py</span></code> script on the source data to re-write the subtask termination signals to the dataset.</p>
+</div></section>
+</section>
+<section id="visualization-during-data-generation">
+<h2>Visualization during Data Generation<a class="headerlink" href="#visualization-during-data-generation" title="Permalink to this headline">#</a></h2>
+<p>The main data generation script (<code class="docutils literal notranslate"><span class="pre">scripts/generate_dataset.py</span></code>) also has some useful features for debugging, including on-screen visualization (<code class="docutils literal notranslate"><span class="pre">--render</span></code>), off-screen rendering to video (<code class="docutils literal notranslate"><span class="pre">--video_path</span></code>), running a quick run for debugging (<code class="docutils literal notranslate"><span class="pre">--debug</span></code>), and pausing after each subtask execution (<code class="docutils literal notranslate"><span class="pre">--pause_subtask</span></code>):</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># run normal data generation</span>
+$<span class="w"> </span>python<span class="w"> </span>generate_dataset.py<span class="w"> </span>--config<span class="w"> </span>/path/to/config.json
+
+<span class="c1"># render all data generation attempts on-screen</span>
+$<span class="w"> </span>python<span class="w"> </span>generate_dataset.py<span class="w"> </span>--config<span class="w"> </span>/path/to/config.json<span class="w"> </span>--render
+
+<span class="c1"># render all data generation attempts to a video</span>
+$<span class="w"> </span>python<span class="w"> </span>generate_dataset.py<span class="w"> </span>--config<span class="w"> </span>/path/to/config.json<span class="w"> </span>--video_path<span class="w"> </span>/path/to/video.mp4
+
+<span class="c1"># run a quick debug run</span>
+$<span class="w"> </span>python<span class="w"> </span>generate_dataset.py<span class="w"> </span>--config<span class="w"> </span>/path/to/config.json<span class="w"> </span>--debug
+
+<span class="c1"># pause after every subtask to debug data generation</span>
+$<span class="w"> </span>python<span class="w"> </span>generate_dataset.py<span class="w"> </span>--config<span class="w"> </span>/path/to/config.json<span class="w"> </span>--render<span class="w"> </span>--pause_subtask
+</pre></div>
+</div>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="subtask_termination_signals.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Subtask Termination Signals</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../modules/overview.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Codebase Overview</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ajay Mandlekar<br/>
+  
+      &copy; Copyright 2023-2024, NVIDIA.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
