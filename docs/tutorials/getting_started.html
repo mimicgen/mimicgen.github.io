@@ -534,7 +534,10 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>This is a basic robomimic dataset collected via teleoperation in robosuite (see <a class="reference external" href="https://robomimic.github.io/docs/datasets/robosuite.html">here</a>). We need to add in extra information to the hdf5 to make it compatible with MimicGen:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>mimicgen/scripts/prepare_src_dataset.py<span class="w"> </span>--dataset<span class="w"> </span>datasets/source/square.hdf5<span class="w"> </span>--env_interface<span class="w"> </span>MG_Square<span class="w"> </span>--env_interface_type<span class="w"> </span>robosuite
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>mimicgen/scripts/prepare_src_dataset.py<span class="w"> </span><span class="se">\</span>
+--dataset<span class="w"> </span>datasets/source/square.hdf5<span class="w"> </span><span class="se">\</span>
+--env_interface<span class="w"> </span>MG_Square<span class="w"> </span><span class="se">\</span>
+--env_interface_type<span class="w"> </span>robosuite
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">--env_interface</span></code> and <code class="docutils literal notranslate"><span class="pre">--env_interface_type</span></code> arguments allow the script to find the correct <a class="reference external" href="https://mimicgen.github.io/docs/modules/env_interfaces.html">Environment Interface</a> class to extract <a class="reference external" href="https://mimicgen.github.io/docs/modules/datagen.html#datagen-info">DatagenInfo objects</a> at each timestep. In general, each task needs to have an environment interface class to tell MimicGen how to retrieve object poses and other information needed during data generation.</p>
@@ -542,7 +545,10 @@ title="Print to PDF"
 <section id="step-2-prepare-data-generation-config">
 <h3>Step 2: Prepare data generation config<a class="headerlink" href="#step-2-prepare-data-generation-config" title="Permalink to this headline">#</a></h3>
 <p>Each data generation run requires a config json (similar to robomimic <a class="reference external" href="https://robomimic.github.io/docs/modules/configs.html">Configs</a>) that allows us to configure different settings. Template configs for each task are at <code class="docutils literal notranslate"><span class="pre">mimicgen/exps/templates</span></code> and are auto-generated (with <code class="docutils literal notranslate"><span class="pre">scripts/generate_config_templates.py</span></code>). The repository has easy ways to modify these templates to generate new config jsons.</p>
-<p>For now, we will use a script to produce experiment configs consistent with the MimicGen paper. Open <code class="docutils literal notranslate"><span class="pre">scripts/generate_core_configs.py</span></code> and set <code class="docutils literal notranslate"><span class="pre">NUM_TRAJ</span> <span class="pre">=</span> <span class="pre">10</span></code> and <code class="docutils literal notranslate"><span class="pre">GUARANTEE</span> <span class="pre">=</span> <span class="pre">False</span></code> – this means we will attempt to generate 10 new trajectories. Next, run the script:</p>
+<p>For now, we will use a script to produce experiment configs consistent with the MimicGen paper. Open <code class="docutils literal notranslate"><span class="pre">scripts/generate_core_configs.py</span></code> and set <code class="docutils literal notranslate"><span class="pre">NUM_TRAJ</span> <span class="pre">=</span> <span class="pre">10</span></code> and <code class="docutils literal notranslate"><span class="pre">GUARANTEE</span> <span class="pre">=</span> <span class="pre">False</span></code> – this means we will attempt to generate 10 new trajectories.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p><p>If you do not edit <code class="docutils literal notranslate"><span class="pre">scripts/generate_core_configs.py</span></code> the default settings will run data generation until 1000 success trajectories have been collected. This is why it is important to set <code class="docutils literal notranslate"><span class="pre">NUM_TRAJ</span> <span class="pre">=</span> <span class="pre">10</span></code> and <code class="docutils literal notranslate"><span class="pre">GUARANTEE</span> <span class="pre">=</span> <span class="pre">False</span></code> for a quick run. Alternatively, pass the <code class="docutils literal notranslate"><span class="pre">--debug</span></code> flag to the command in Step 3, which will run an even smaller data generation run.</p>
+</div><p>Next, run the script:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>mimicgen/scripts/generate_core_configs.py
 </pre></div>
 </div>
@@ -551,10 +557,14 @@ title="Print to PDF"
 <section id="step-3-run-data-generation-and-view-outputs">
 <h3>Step 3: Run data generation and view outputs<a class="headerlink" href="#step-3-run-data-generation-and-view-outputs" title="Permalink to this headline">#</a></h3>
 <p>Next, we run data generation on the Square D1 task (this will take a couple minutes):</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>mimicgen/scripts/generate_dataset.py<span class="w"> </span>--config<span class="w"> </span>/tmp/core_configs/demo_src_square_task_D1.json<span class="w"> </span>--auto-remove-exp
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>mimicgen/scripts/generate_dataset.py<span class="w"> </span><span class="se">\</span>
+--config<span class="w"> </span>/tmp/core_configs/demo_src_square_task_D1.json<span class="w"> </span><span class="se">\</span>
+--auto-remove-exp
 </pre></div>
 </div>
-<p>By default, the data generation folder can be found at <code class="docutils literal notranslate"><span class="pre">/tmp/core_datasets/square/demo_src_square_task_D1</span></code>. The contents of this folder are as follows:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p><p>If you run into a <code class="docutils literal notranslate"><span class="pre">RuntimeError:</span> <span class="pre">No</span> <span class="pre">ffmpeg</span> <span class="pre">exe</span> <span class="pre">could</span> <span class="pre">be</span> <span class="pre">found.</span></code> at the end of the script, this means rendering the dataset to video failed. We found that a simple <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">ffmpeg</span></code> fixed the problem on our end (as documented on the <a class="reference external" href="https://mimicgen.github.io/docs/miscellaneous/troubleshooting.html">troubleshooting page</a>).</p>
+</div><p>By default, the data generation folder can be found at <code class="docutils literal notranslate"><span class="pre">/tmp/core_datasets/square/demo_src_square_task_D1</span></code>. The contents of this folder are as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">.</span><span class="n">hdf5</span>                                       <span class="c1"># generated hdf5 containing successful demonstrations</span>
 <span class="n">demo_failed</span><span class="o">.</span><span class="n">hdf5</span><span class="o">.</span>                               <span class="c1"># generated hdf5 containing failed demonstrations, up to a certain limit</span>
 <span class="n">important_stats</span><span class="o">.</span><span class="n">json</span>                            <span class="c1"># json file summarizing success rate and other statistics</span>
