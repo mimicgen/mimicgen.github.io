@@ -614,6 +614,31 @@ to use for generating configs and training runs</p></li>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="mimicgen.utils.file_utils.download_file_from_hf">
+<span class="sig-prename descclassname"><span class="pre">mimicgen.utils.file_utils.</span></span><span class="sig-name descname"><span class="pre">download_file_from_hf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.utils.file_utils.download_file_from_hf" title="Permalink to this definition">#</a></dt>
+<dd><p>Downloads a file from Hugging Face.</p>
+<p>Reference: <a class="reference external" href="https://huggingface.co/docs/huggingface_hub/main/en/guides/download">https://huggingface.co/docs/huggingface_hub/main/en/guides/download</a></p>
+<dl class="simple">
+<dt>Example usage:</dt><dd><p>repo_id = “amandlek/mimicgen_datasets”
+filename = “core/coffee_d0.hdf5”
+download_dir = “/tmp”
+download_file_from_hf(repo_id, filename, download_dir, check_overwrite=True)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>repo_id</strong> (<em>str</em>) – Hugging Face repo ID</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – path to file in repo</p></li>
+<li><p><strong>download_dir</strong> (<em>str</em>) – path to directory where file should be downloaded</p></li>
+<li><p><strong>check_overwrite</strong> (<em>bool</em>) – if True, will sanity check the download fpath to make sure a file of that name
+doesn’t already exist there</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="mimicgen.utils.file_utils.download_url_from_gdrive">
 <span class="sig-prename descclassname"><span class="pre">mimicgen.utils.file_utils.</span></span><span class="sig-name descname"><span class="pre">download_url_from_gdrive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mimicgen.utils.file_utils.download_url_from_gdrive" title="Permalink to this definition">#</a></dt>
 <dd><p>Downloads a file at a URL from Google Drive.</p>
